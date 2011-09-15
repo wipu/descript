@@ -1,0 +1,21 @@
+<h2>Editing file, inlined diff</h2>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>$EDITOR <img width="0" />"file1"
+</span></div>
+<div class='editor'>
+<div class='add line'>line 1</div>
+<div class='add line'>line 2</div>
+</div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>$EDITOR <img width="0" />"file1"
+</span></div>
+<div class='editor'>
+<div class='keep line'>line 1</div>
+<div class='keep line'>line 2</div>
+<div class='add line'>line 3</div>
+</div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>cat <img width="0" />file1
+</span></div>
+<div class='console output'>line <img width="0" />1<br/>
+line <img width="0" />2<br/>
+line <img width="0" />3
+</div>
+<div><span class='output-asserted'><i>Output asserted</i></span></div>

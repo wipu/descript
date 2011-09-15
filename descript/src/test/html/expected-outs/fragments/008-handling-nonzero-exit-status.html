@@ -1,0 +1,44 @@
+<h2>Handling non-zero exit status of commands</h2>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>die() <img width="0" />{ <img width="0" />html <img width="0" />"died: <img width="0" />$@"; <img width="0" />}
+</span></div>
+<div class='console output'></div>
+<p class='text'>
+A non-zero exit status is an error, if using the cmd function.
+</p>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>false
+</span></div>
+<div class='console output'>died: Command 'false' exited with status 1. It should have been 0.</div>
+<p class='text'>
+Function failing-cmd must be used instead.
+</p>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>false
+</span></div>
+<div class='console output'></div>
+<p class='text'>
+It's an error if the failing-cmd exits with zero.
+</p>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>true
+</span></div>
+<div class='console output'>died: Command 'true' exited with status 0. It should have been 1.</div>
+<p class='text'>
+The bash special parameter 0 always expands to 0, to keep descript more robust. TODO maybe it would be better not to use set -eu.
+</p>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>die() <img width="0" />{ <img width="0" />echo <img width="0" />"$@"; <img width="0" />exit <img width="0" />1; <img width="0" />}
+</span></div>
+<div class='console output'></div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>true
+</span></div>
+<div class='console output'></div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>echo <img width="0" />$?
+</span></div>
+<div class='console output'>0
+</div>
+<div><span class='output-asserted'><i>Output asserted</i></span></div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>false
+</span></div>
+<div class='console output'></div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>echo <img width="0" />$?
+</span></div>
+<div class='console output'>0
+</div>
+<div><span class='output-asserted'><i>Output asserted</i></span></div>

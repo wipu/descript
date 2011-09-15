@@ -1,0 +1,41 @@
+<h2>Editing file, inlined content</h2>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>$EDITOR <img width="0" />"file1"
+</span></div>
+<div class='editor'>
+<div class='add line'>file1 line1</div>
+<div class='add line'>file1 line2</div>
+</div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>cat <img width="0" />file1
+</span></div>
+<div class='console output'>file1 <img width="0" />line1<br/>
+file1 <img width="0" />line2
+</div>
+<div><span class='output-asserted'><i>Output asserted</i></span></div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>$EDITOR <img width="0" />"file1"
+</span></div>
+<div class='editor'>
+<div class='del line'>file1 line1</div>
+<div class='add line'>file1 line1, modified</div>
+<div class='keep line'>file1 line2</div>
+<div class='add line'>file1 line3, added</div>
+</div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>cat <img width="0" />file1
+</span></div>
+<div class='console output'>file1 <img width="0" />line1, <img width="0" />modified<br/>
+file1 <img width="0" />line2<br/>
+file1 <img width="0" />line3, <img width="0" />added
+</div>
+<div><span class='output-asserted'><i>Output asserted</i></span></div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>$EDITOR <img width="0" />"file1"
+</span></div>
+<div class='editor'>
+<div class='keep line'>file1 line1, modified</div>
+<div class='del line'>file1 line2</div>
+<div class='keep line'>file1 line3, added</div>
+</div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>cat <img width="0" />file1
+</span></div>
+<div class='console output'>file1 <img width="0" />line1, <img width="0" />modified<br/>
+file1 <img width="0" />line3, <img width="0" />added
+</div>
+<div><span class='output-asserted'><i>Output asserted</i></span></div>

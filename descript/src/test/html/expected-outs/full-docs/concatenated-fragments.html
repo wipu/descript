@@ -1,0 +1,241 @@
+<html><head>
+<style type='text/css'>
+body {font: 12px verdana, arial, sans-serif;}
+.text {width:65em;}
+.console {background-color:black;font-family:monospace;margin-left:33px;width:60em;}
+.prompt {font-weight:bold;color:green;}
+.cmd {color:white;}
+.output {color:gray;}
+.output-asserted {font-size:8px; background-color: #def9de;; margin-left:33px;}
+.editor {border-style:solid;border-width:1px;margin-left:30px;margin-top:5px;margin-bottom:5px;background-color: #ffffd0;;width:60em;padding:2px;}
+div.line {white-space:pre;margin-bottom:1px;}
+div.add  {background-color: #def9de;;}
+div.del  {background-color: #f9dede;; text-decoration:line-through;}
+div.keep {background-color: #ffffff;;}
+</style>
+</head><body>
+<h2>Forged prompt shows current working directory</h2>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>mkdir <img width="0" />dir1
+</span></div>
+<div class='console output'></div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>cd <img width="0" />dir1
+</span></div>
+<div class='console output'></div>
+<div class='console'><span class='prompt'>~/dir1 $ </span><span class='cmd'>mkdir <img width="0" />dir2
+</span></div>
+<div class='console output'></div>
+<div class='console'><span class='prompt'>~/dir1 $ </span><span class='cmd'>cd <img width="0" />dir2
+</span></div>
+<div class='console output'></div>
+<div class='console'><span class='prompt'>~/dir1/dir2 $ </span><span class='cmd'>cd <img width="0" />..
+</span></div>
+<div class='console output'></div>
+<div class='console'><span class='prompt'>~/dir1 $ </span><span class='cmd'>cd <img width="0" />..
+</span></div>
+<div class='console output'></div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'># <img width="0" />back
+</span></div>
+<div class='console output'></div>
+<h2>Console shows all whitespace and overlong lines</h2>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>echo <img width="0" /> <img width="0" />"all <img width="0" /> <img width="0" />" <img width="0" /> <img width="0" /> <img width="0" />whitespace <img width="0" />is <img width="0" />preserved <img width="0" /> <img width="0" /> <img width="0" /> <img width="0" /> <img width="0" />.
+</span></div>
+<div class='console output'>all <img width="0" /> <img width="0" /> <img width="0" />whitespace <img width="0" />is <img width="0" />preserved <img width="0" />.
+</div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>echo <img width="0" />" <img width="0" /> <img width="0" />And <img width="0" />overlong <img width="0" />lines <img width="0" />are <img width="0" />broken <img width="0" />automatically, <img width="0" />but <img width="0" />there <img width="0" />is <img width="0" />no <img width="0" />linebreak, <img width="0" />so <img width="0" />the <img width="0" />reader <img width="0" />can <img width="0" />copy-paste <img width="0" />the <img width="0" />text <img width="0" />without <img width="0" />getting <img width="0" />any <img width="0" /> <img width="0" /> <img width="0" />extra <img width="0" /> <img width="0" /> <img width="0" />linebreaks."
+</span></div>
+<div class='console output'> <img width="0" /> <img width="0" />And <img width="0" />overlong <img width="0" />lines <img width="0" />are <img width="0" />broken <img width="0" />automatically, <img width="0" />but <img width="0" />there <img width="0" />is <img width="0" />no <img width="0" />linebreak, <img width="0" />so <img width="0" />the <img width="0" />reader <img width="0" />can <img width="0" />copy-paste <img width="0" />the <img width="0" />text <img width="0" />without <img width="0" />getting <img width="0" />any <img width="0" /> <img width="0" /> <img width="0" />extra <img width="0" /> <img width="0" /> <img width="0" />linebreaks.
+</div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>mkdir <img width="0" />'extra <img width="0" /> <img width="0" /> <img width="0" />whitespace <img width="0" /> <img width="0" /> <img width="0" />also <img width="0" />works <img width="0" />in <img width="0" />prompt <img width="0" /> <img width="0" />'
+</span></div>
+<div class='console output'></div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>cd <img width="0" />'extra <img width="0" /> <img width="0" /> <img width="0" />whitespace <img width="0" /> <img width="0" /> <img width="0" />also <img width="0" />works <img width="0" />in <img width="0" />prompt <img width="0" /> <img width="0" />'
+</span></div>
+<div class='console output'></div>
+<div class='console'><span class='prompt'>~/extra <img width="0" /> <img width="0" /> <img width="0" />whitespace <img width="0" /> <img width="0" /> <img width="0" />also <img width="0" />works <img width="0" />in <img width="0" />prompt <img width="0" /> <img width="0" /> $ </span><span class='cmd'>cd <img width="0" />..
+</span></div>
+<div class='console output'></div>
+<h2>Asserting output of cmd</h2>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>die() <img width="0" />{ <img width="0" />html <img width="0" />"died: <img width="0" />$@"; <img width="0" />}
+</span></div>
+<div class='console output'></div>
+<p class='text'>
+Function out-was can be used to assert cmd output
+</p>
+<p class='text'>
+First, the empty case, success:
+</p>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>true
+</span></div>
+<div class='console output'></div>
+<div><span class='output-asserted'><i>Output asserted</i></span></div>
+<p class='text'>
+And failure:
+</p>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>true
+</span></div>
+<div class='console output'></div>
+died: Error in command output, see diff output for details.<div><span class='output-asserted'><i>Output asserted</i></span></div>
+<p class='text'>
+Then non-empty:
+</p>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>echo <img width="0" />"non-empty <img width="0" />output"
+</span></div>
+<div class='console output'>non-empty <img width="0" />output
+</div>
+<div><span class='output-asserted'><i>Output asserted</i></span></div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>echo <img width="0" />"actual"
+</span></div>
+<div class='console output'>actual
+</div>
+died: Error in command output, see diff output for details.<div><span class='output-asserted'><i>Output asserted</i></span></div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>die() <img width="0" />{ <img width="0" />errorlog <img width="0" />"$@"; <img width="0" />exit <img width="0" />1; <img width="0" />}
+</span></div>
+<div class='console output'></div>
+<p class='text'>
+stdout and stderr get combined. TODO is there a way to interleave them naturally but still assert them separately?
+</p>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>echo <img width="0" />err <img width="0" />> <img width="0" />/dev/stderr
+</span></div>
+<div class='console output'>err
+</div>
+<div><span class='output-asserted'><i>Output asserted</i></span></div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>echo <img width="0" />out <img width="0" />>> <img width="0" />/dev/stdout <img width="0" />&amp;&amp; <img width="0" />echo <img width="0" />err <img width="0" />>> <img width="0" />/dev/stderr
+</span></div>
+<div class='console output'>out<br/>
+err
+</div>
+<div><span class='output-asserted'><i>Output asserted</i></span></div>
+<p class='text'>
+Since descript uses files to capture output, append is necessary:
+</p>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>echo <img width="0" />out <img width="0" />> <img width="0" />/dev/stdout <img width="0" />&amp;&amp; <img width="0" />echo <img width="0" />err <img width="0" />> <img width="0" />/dev/stderr
+</span></div>
+<div class='console output'>err
+</div>
+<div><span class='output-asserted'><i>Output asserted</i></span></div>
+<h2>Editing file, inlined content</h2>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>$EDITOR <img width="0" />"file1"
+</span></div>
+<div class='editor'>
+<div class='add line'>file1 line1</div>
+<div class='add line'>file1 line2</div>
+</div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>cat <img width="0" />file1
+</span></div>
+<div class='console output'>file1 <img width="0" />line1<br/>
+file1 <img width="0" />line2
+</div>
+<div><span class='output-asserted'><i>Output asserted</i></span></div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>$EDITOR <img width="0" />"file1"
+</span></div>
+<div class='editor'>
+<div class='del line'>file1 line1</div>
+<div class='add line'>file1 line1, modified</div>
+<div class='keep line'>file1 line2</div>
+<div class='add line'>file1 line3, added</div>
+</div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>cat <img width="0" />file1
+</span></div>
+<div class='console output'>file1 <img width="0" />line1, <img width="0" />modified<br/>
+file1 <img width="0" />line2<br/>
+file1 <img width="0" />line3, <img width="0" />added
+</div>
+<div><span class='output-asserted'><i>Output asserted</i></span></div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>$EDITOR <img width="0" />"file1"
+</span></div>
+<div class='editor'>
+<div class='keep line'>file1 line1, modified</div>
+<div class='del line'>file1 line2</div>
+<div class='keep line'>file1 line3, added</div>
+</div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>cat <img width="0" />file1
+</span></div>
+<div class='console output'>file1 <img width="0" />line1, <img width="0" />modified<br/>
+file1 <img width="0" />line3, <img width="0" />added
+</div>
+<div><span class='output-asserted'><i>Output asserted</i></span></div>
+<h2>Editing file, inlined diff</h2>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>$EDITOR <img width="0" />"file1"
+</span></div>
+<div class='editor'>
+<div class='add line'>line 1</div>
+<div class='add line'>line 2</div>
+</div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>$EDITOR <img width="0" />"file1"
+</span></div>
+<div class='editor'>
+<div class='keep line'>line 1</div>
+<div class='keep line'>line 2</div>
+<div class='add line'>line 3</div>
+</div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>cat <img width="0" />file1
+</span></div>
+<div class='console output'>line <img width="0" />1<br/>
+line <img width="0" />2<br/>
+line <img width="0" />3
+</div>
+<div><span class='output-asserted'><i>Output asserted</i></span></div>
+<h2>Text may contain reserved HTML characters: &lt;i>i&lt;/i> and &amp;</h2>
+<p class='text'>
+This is a paragraph. It can contain &lt;i>i&lt;/i> and &amp;.
+</p>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>echo <img width="0" />"And <img width="0" />also <img width="0" />commands <img width="0" />and <img width="0" />their <img width="0" />output: <img width="0" />&lt;i>i&lt;/i> <img width="0" />and <img width="0" />&amp;"
+</span></div>
+<div class='console output'>And <img width="0" />also <img width="0" />commands <img width="0" />and <img width="0" />their <img width="0" />output: <img width="0" />&lt;i>i&lt;/i> <img width="0" />and <img width="0" />&amp;
+</div>
+<h2>Handling non-zero exit status of commands</h2>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>die() <img width="0" />{ <img width="0" />html <img width="0" />"died: <img width="0" />$@"; <img width="0" />}
+</span></div>
+<div class='console output'></div>
+<p class='text'>
+A non-zero exit status is an error, if using the cmd function.
+</p>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>false
+</span></div>
+<div class='console output'>died: Command 'false' exited with status 1. It should have been 0.</div>
+<p class='text'>
+Function failing-cmd must be used instead.
+</p>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>false
+</span></div>
+<div class='console output'></div>
+<p class='text'>
+It's an error if the failing-cmd exits with zero.
+</p>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>true
+</span></div>
+<div class='console output'>died: Command 'true' exited with status 0. It should have been 1.</div>
+<p class='text'>
+The bash special parameter 0 always expands to 0, to keep descript more robust. TODO maybe it would be better not to use set -eu.
+</p>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>die() <img width="0" />{ <img width="0" />echo <img width="0" />"$@"; <img width="0" />exit <img width="0" />1; <img width="0" />}
+</span></div>
+<div class='console output'></div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>true
+</span></div>
+<div class='console output'></div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>echo <img width="0" />$?
+</span></div>
+<div class='console output'>0
+</div>
+<div><span class='output-asserted'><i>Output asserted</i></span></div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>false
+</span></div>
+<div class='console output'></div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>echo <img width="0" />$?
+</span></div>
+<div class='console output'>0
+</div>
+<div><span class='output-asserted'><i>Output asserted</i></span></div>
+<h2>Redirects can be used</h2>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>echo <img width="0" />"it <img width="0" />works" <img width="0" />> <img width="0" />file
+</span></div>
+<div class='console output'></div>
+<div class='console'><span class='prompt'>~ $ </span><span class='cmd'>cat <img width="0" />file
+</span></div>
+<div class='console output'>it <img width="0" />works
+</div>
+<div><span class='output-asserted'><i>Output asserted</i></span></div>
+<h2>Empty section &lt; &amp;</h2>
+</body>
+</html>

@@ -1,0 +1,3 @@
+doc() {
+  section Empty section "< &"
+}
