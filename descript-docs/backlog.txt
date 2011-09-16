@@ -1,0 +1,9 @@
++ As iwant developer I want a pure-shell descript so I can test and document iwant
+
++ As iwant developer I want descript to normalize to absolute the paths I pass to it so I can keep on hassling with relative paths for a while
+
+- As iwant developer I want my document name "Tutorial" to be visible as a header and page title
+
+- As iwant developer I want proper nesting of sections because my document is strutured that way
+
+- As iwant developer I want functions for html formatting like kbd and i so I don't lose my current formatting 

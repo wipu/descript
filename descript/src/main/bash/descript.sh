@@ -8,8 +8,8 @@ HERE=$(readlink -f "$HERE")
 . "$HERE/descript-functions.sh"
 
 [ $# == 3 ] || die "Usage: $0 DOC OUT MAKEITFULLDOC"
-DOC=$1
-OUT=$2
+DOC=$(readlink -f "$1")
+OUT=$(readlink -f "$2")
 MAKEITFULLDOC=$3
 
 make-it-full-doc() {
