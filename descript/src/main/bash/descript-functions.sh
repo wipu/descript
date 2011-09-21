@@ -161,6 +161,9 @@ prompt() {
   html "<span class='prompt'>$PROMPT \$ </span>"
 }
 
+#  sed 's:\([^ ]\):<code>\1</code>:g' |
+
+
 # nice span-like flow without extra linebreaks or other characters needed
 # and no stripping of whitespace.
 # whitespace=pre doesn't work because manual linebreaks needed
@@ -168,9 +171,12 @@ prompt() {
 # well, browsers preserve consecutive spaces if there is a non-text element
 # between them, so let's make it a 0-width image.
 #
+# the img hack is used for all characters for console-like breaking of
+# lines (not word boundary but on any character)
+#
 # linebreaks get replaced with <br/> except on the last line
 spaced() {
-  sed 's: : <img width="0" />:g' |
+  sed 's:\(.\):\1<img width="0" />:g' |
   sed '$!s:$:<br/>:g'
 }
 
