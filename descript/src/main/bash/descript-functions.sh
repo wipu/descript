@@ -175,8 +175,13 @@ prompt() {
 # lines (not word boundary but on any character)
 #
 # linebreaks get replaced with <br/> except on the last line
+#
+# hacked html entities (&amp; and &lt;) are dehacked.
+# TODO find a less ugly way to handle them.
 spaced() {
   sed 's:\(.\):\1<img width="0" />:g' |
+  sed 's:\&<img width="0" />a<img width="0" />m<img width="0" />p<img width="0" />;<img width="0" />:\&amp;:g' |
+  sed 's:\&<img width="0" />l<img width="0" />t<img width="0" />;<img width="0" />:\&lt;:g' |
   sed '$!s:$:<br/>:g'
 }
 
@@ -192,7 +197,7 @@ cmd-line() {
 }
 
 forged-path() {
-  to-relative '/home/hacker/'
+  to-relative '/home/hacker'
 }
 
 editdir-of() {

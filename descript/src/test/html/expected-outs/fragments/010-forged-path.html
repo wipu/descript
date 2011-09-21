@@ -1,0 +1,36 @@
+<h2>Forged path</h2>
+<p class='text'>
+Absolute paths in output get forged, partly for security and partly for reproducible builds.
+</p>
+<div class='console'><span class='prompt'>~<img width="0" /> $ </span><span class='cmd'>p<img width="0" />w<img width="0" />d<img width="0" />
+</span></div>
+<div class='console output'>/<img width="0" />h<img width="0" />o<img width="0" />m<img width="0" />e<img width="0" />/<img width="0" />h<img width="0" />a<img width="0" />c<img width="0" />k<img width="0" />e<img width="0" />r<img width="0" />
+</div>
+<div><span class='output-asserted'><i>Output asserted</i></span></div>
+<p class='text'>
+But out-was assertions need to use real paths! Forging must be visual only.
+</p>
+<div class='console'><span class='prompt'>~<img width="0" /> $ </span><span class='cmd'>m<img width="0" />k<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" /> <img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />1<img width="0" /> <img width="0" />&amp;&amp; <img width="0" />c<img width="0" />d<img width="0" /> <img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />1<img width="0" />
+</span></div>
+<div class='console output'></div>
+<div class='console'><span class='prompt'>~<img width="0" />/<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />1<img width="0" /> $ </span><span class='cmd'>p<img width="0" />w<img width="0" />d<img width="0" />
+</span></div>
+<div class='console output'>/<img width="0" />h<img width="0" />o<img width="0" />m<img width="0" />e<img width="0" />/<img width="0" />h<img width="0" />a<img width="0" />c<img width="0" />k<img width="0" />e<img width="0" />r<img width="0" />/<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />1<img width="0" />
+</div>
+<div><span class='output-asserted'><i>Output asserted</i></span></div>
+<div class='console'><span class='prompt'>~<img width="0" />/<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />1<img width="0" /> $ </span><span class='cmd'>e<img width="0" />c<img width="0" />h<img width="0" />o<img width="0" /> <img width="0" />$<img width="0" />P<img width="0" />W<img width="0" />D<img width="0" />/<img width="0" />a<img width="0" />n<img width="0" />o<img width="0" />t<img width="0" />h<img width="0" />e<img width="0" />r<img width="0" />-<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />
+</span></div>
+<div class='console output'>/<img width="0" />h<img width="0" />o<img width="0" />m<img width="0" />e<img width="0" />/<img width="0" />h<img width="0" />a<img width="0" />c<img width="0" />k<img width="0" />e<img width="0" />r<img width="0" />/<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />1<img width="0" />/<img width="0" />a<img width="0" />n<img width="0" />o<img width="0" />t<img width="0" />h<img width="0" />e<img width="0" />r<img width="0" />-<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />
+</div>
+<div><span class='output-asserted'><i>Output asserted</i></span></div>
+<p class='text'>
+Absolute paths on command lines are also forged.
+</p>
+<div class='console'><span class='prompt'>~<img width="0" />/<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />1<img width="0" /> $ </span><span class='cmd'>e<img width="0" />c<img width="0" />h<img width="0" />o<img width="0" /> <img width="0" />P<img width="0" />W<img width="0" />D<img width="0" /> <img width="0" />e<img width="0" />x<img width="0" />p<img width="0" />a<img width="0" />n<img width="0" />d<img width="0" />e<img width="0" />d<img width="0" /> <img width="0" />i<img width="0" />n<img width="0" /> <img width="0" />t<img width="0" />h<img width="0" />e<img width="0" /> <img width="0" />d<img width="0" />e<img width="0" />s<img width="0" />c<img width="0" />r<img width="0" />i<img width="0" />p<img width="0" />t<img width="0" /> <img width="0" />s<img width="0" />c<img width="0" />r<img width="0" />i<img width="0" />p<img width="0" />t<img width="0" />:<img width="0" /> <img width="0" />/<img width="0" />h<img width="0" />o<img width="0" />m<img width="0" />e<img width="0" />/<img width="0" />h<img width="0" />a<img width="0" />c<img width="0" />k<img width="0" />e<img width="0" />r<img width="0" />/<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />1<img width="0" />
+</span></div>
+<div class='console output'>P<img width="0" />W<img width="0" />D<img width="0" /> <img width="0" />e<img width="0" />x<img width="0" />p<img width="0" />a<img width="0" />n<img width="0" />d<img width="0" />e<img width="0" />d<img width="0" /> <img width="0" />i<img width="0" />n<img width="0" /> <img width="0" />t<img width="0" />h<img width="0" />e<img width="0" /> <img width="0" />d<img width="0" />e<img width="0" />s<img width="0" />c<img width="0" />r<img width="0" />i<img width="0" />p<img width="0" />t<img width="0" /> <img width="0" />s<img width="0" />c<img width="0" />r<img width="0" />i<img width="0" />p<img width="0" />t<img width="0" />:<img width="0" /> <img width="0" />/<img width="0" />h<img width="0" />o<img width="0" />m<img width="0" />e<img width="0" />/<img width="0" />h<img width="0" />a<img width="0" />c<img width="0" />k<img width="0" />e<img width="0" />r<img width="0" />/<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />1<img width="0" />
+</div>
+<div><span class='output-asserted'><i>Output asserted</i></span></div>
+<div class='console'><span class='prompt'>~<img width="0" />/<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />1<img width="0" /> $ </span><span class='cmd'>c<img width="0" />d<img width="0" /> <img width="0" />.<img width="0" />.<img width="0" />
+</span></div>
+<div class='console output'></div>
