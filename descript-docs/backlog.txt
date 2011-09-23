@@ -10,6 +10,8 @@
 + As iwant developer I want path forging tested and fixed (extra trailing slash removed: /home/hacker//path -> /home/hacker/path
   * this was an accidentally copied feature from a spike solution and got used without tests
 
++ bugfix: log prompt as such, before the img hack
+
 - As iwant developer I want my document name "Tutorial" to be visible as a header and page title
 
 - As iwant developer I want proper nesting of sections because my document is strutured that way

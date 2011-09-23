@@ -156,8 +156,9 @@ to-relative() {
 }
 
 prompt() {
-  local PROMPT=$(pwd | to-relative '~' | spaced)
+  local PROMPT=$(pwd | to-relative '~')
   debuglog "prompt: $PROMPT"
+  PROMPT=$(echo -n "$PROMPT" | spaced)
   html "<span class='prompt'>$PROMPT \$ </span>"
 }
 
