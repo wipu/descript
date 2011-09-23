@@ -2,8 +2,18 @@
 
 + As iwant developer I want descript to normalize to absolute the paths I pass to it so I can keep on hassling with relative paths for a while
 
++ As a descript user I want console text line wraps to occur on any character, not on word boundary, because that's how real console does it
+  * extend the 0-img hack to all characters, not only spaces
+
++ bugfix: don't break html entities (&amp; and &lt;) when inserting the dummy imgs
+
++ As iwant developer I want path forging tested and fixed (extra trailing slash removed: /home/hacker//path -> /home/hacker/path
+  * this was an accidentally copied feature from a spike solution and got used without tests
+
 - As iwant developer I want my document name "Tutorial" to be visible as a header and page title
 
 - As iwant developer I want proper nesting of sections because my document is strutured that way
 
 - As iwant developer I want functions for html formatting like kbd and i so I don't lose my current formatting 
+
+- As user I want end renamed to end-article so it's not so easy to call accidentally in my article
