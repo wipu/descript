@@ -1,7 +1,7 @@
 # to be sourced
 
 die() {
-  echo "$@"
+  errorlog "$@"
   exit 1
 }
 
@@ -26,7 +26,7 @@ end() {
 }
 
 printlog() {
-  echo "---- $@" > /dev/stderr
+  echo "---- $@" >> /dev/stderr
 }
 
 log() {
@@ -38,6 +38,13 @@ log() {
 
 debuglog() {
   logcolor 36
+  printlog "$@"
+  logcolor 0
+}
+
+errorlog() {
+  logcolor 1
+  logcolor 31
   printlog "$@"
   logcolor 0
 }
@@ -128,6 +135,9 @@ _cmd() {
   set +e
   . "$CMDTMP" > "$LASTOUT" 2>&1
   local ACTUAL_STATUS=$?
+  debuglog "exit status: $ACTUAL_STATUS"
+  debuglog "out:"
+  cat "$LASTOUT" >> /dev/stderr
   set -e
   [ "$ACTUAL_STATUS" == "$EXPECTED_STATUS" ] ||
     die "Command '$@' exited with status $ACTUAL_STATUS. It should have been $EXPECTED_STATUS."
@@ -144,8 +154,10 @@ cmd() {
 }
 
 out-was() {
+  debuglog "Asserting out $LASTOUT"
   local EXPECTED=$DESCRIPT_TMP/expected-out
   cat > "$EXPECTED"
+  debuglog "$EXPECTED"
   diff "$LASTOUT" "$EXPECTED" || die "Error in command output, see diff output for details."
   echo "<div><span class='output-asserted'><i>Output asserted</i></span></div>" | to-article
 }

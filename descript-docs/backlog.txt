@@ -12,6 +12,10 @@
 
 + bugfix: log prompt as such, before the img hack
 
++ As user I want cmd output and exit status logged so I can debug my descript docs more easily
+
++ As user I want logs appended to stderr instead of written to stdout so I can use stdout for "real" data in pipelines, and that append part so that I can redirect stderr to files without overwriting existing logs
+
 - As iwant developer I want my document name "Tutorial" to be visible as a header and page title
 
 - As iwant developer I want proper nesting of sections because my document is strutured that way
