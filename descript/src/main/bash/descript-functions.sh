@@ -57,7 +57,7 @@ yippielog() {
 
 logcolor() {
   # TODO why doesn't [ -t 1 ] && printf... work here?
-  if [ -t 1 ]; then printf "\033[${1}m"; fi
+  if [ -t 2 ]; then printf "\033[${1}m"; fi
 }
 
 to-article() {
