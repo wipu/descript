@@ -18,6 +18,8 @@
 
 + bugfix: use colors if stderr if a console, because that's where the logs are written to, not stdout
 
++ bugfix: print color ansi codes to stderr, too
+
 - As iwant developer I want my document name "Tutorial" to be visible as a header and page title
 
 - As iwant developer I want proper nesting of sections because my document is strutured that way
