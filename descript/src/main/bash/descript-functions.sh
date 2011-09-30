@@ -123,8 +123,9 @@ to-article <<EOF
 EOF
 }
 
-_cmd() {
-  log "   _cmd: $@"
+cmde() {
+  log "   cmde: $@"
+  [ $# -lt 2 ] && die "Usage: PIPESTATUS CMDWORD..."
   local EXPECTED_STATUS=$1
   shift
   cmd-line "$@"
@@ -132,25 +133,21 @@ _cmd() {
   local CMDTMP=$DESCRIPT_TMP/tmp.sh
   LASTOUT=$DESCRIPT_TMP/out
   echo "$@" > "$CMDTMP"
+  echo 'ACTUAL_STATUS=${PIPESTATUS[*]}' >> "$CMDTMP"
   set +e
   . "$CMDTMP" > "$LASTOUT" 2>&1
-  local ACTUAL_STATUS=$?
-  debuglog "exit status: $ACTUAL_STATUS"
+  debuglog "Actual pipe status: $ACTUAL_STATUS"
   debuglog "out:"
   cat "$LASTOUT" >> /dev/stderr
   set -e
   [ "$ACTUAL_STATUS" == "$EXPECTED_STATUS" ] ||
-    die "Command '$@' exited with status $ACTUAL_STATUS. It should have been $EXPECTED_STATUS."
+    die "Pipeline '$@' exited with status $ACTUAL_STATUS. It should have been $EXPECTED_STATUS."
   cat "$LASTOUT" | forged-path | xml-quoted | spaced | to-article
   html-line "</div>"
 }
 
-failing-cmd() {
-  _cmd "$@"
-}
-
 cmd() {
-  _cmd 0 "$@"
+  cmde 0 "$@"
 }
 
 out-was() {

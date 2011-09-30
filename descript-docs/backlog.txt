@@ -20,6 +20,10 @@
 
 + bugfix: print color ansi codes to stderr, too
 
++ As iwant developer I want to filter (ant) command output with pipes but still be able to assert exit status of the actual command
+  - assert output of ${PIPESTATUS[*]} instead of $?
+    e.g. cmde "1 0" false | true
+
 - As iwant developer I want my document name "Tutorial" to be visible as a header and page title
 
 - As iwant developer I want proper nesting of sections because my document is strutured that way
