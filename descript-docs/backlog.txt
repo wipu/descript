@@ -28,6 +28,8 @@
 
 - bugfix: descript must not fail with "...tmp already exists" when retrying after failed run
 
+- bugfix: 2 spaces in output start are shown only as one
+
 - As iwant developer I want my document name "Tutorial" to be visible as a header and page title
 
 - As iwant developer I want proper nesting of sections because my document is strutured that way
