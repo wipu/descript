@@ -1,0 +1,52 @@
+<h2>Mocked html browser</h2>
+<p class='text'>
+First missing html file.
+</p>
+<div class='console'><span class='prompt'>~<img width="0" /> $ </span><span class='cmd'>d<img width="0" />i<img width="0" />e<img width="0" />(<img width="0" />)<img width="0" /> <img width="0" />{<img width="0" /> <img width="0" />h<img width="0" />t<img width="0" />m<img width="0" />l<img width="0" /> <img width="0" />"<img width="0" />d<img width="0" />i<img width="0" />e<img width="0" />d<img width="0" />:<img width="0" /> <img width="0" />$<img width="0" />@<img width="0" />"<img width="0" />;<img width="0" /> <img width="0" />}<img width="0" />
+</span></div>
+<div class='console output'></div>
+<div class='console'><span class='prompt'>~<img width="0" /> $ </span><span class='cmd'>$<img width="0" />B<img width="0" />R<img width="0" />O<img width="0" />W<img width="0" />S<img width="0" />E<img width="0" />R<img width="0" /> <img width="0" />"<img width="0" />m<img width="0" />i<img width="0" />s<img width="0" />s<img width="0" />i<img width="0" />n<img width="0" />g<img width="0" />.<img width="0" />h<img width="0" />t<img width="0" />m<img width="0" />l<img width="0" />"<img width="0" />
+</span></div>
+died: Cannot browse, file does not exist: missing.html<p class='text'>
+Then missing name for the iframe file of a minimal html document.
+</p>
+<div class='console'><span class='prompt'>~<img width="0" /> $ </span><span class='cmd'>$<img width="0" />E<img width="0" />D<img width="0" />I<img width="0" />T<img width="0" />O<img width="0" />R<img width="0" /> <img width="0" />"<img width="0" />a<img width="0" />.<img width="0" />h<img width="0" />t<img width="0" />m<img width="0" />l<img width="0" />"<img width="0" />
+</span></div>
+<div class='editor'>
+<div class='add line'>&lt;html>&lt;body></div>
+<div class='add line'>&lt;p>Hello&lt;/p></div>
+<div class='add line'>&lt;/body>&lt;/html></div>
+</div>
+died: Usage: browser FILE IFRAMENAME<p class='text'>
+Minimal happy case.
+</p>
+<div class='console'><span class='prompt'>~<img width="0" /> $ </span><span class='cmd'>d<img width="0" />i<img width="0" />e<img width="0" />(<img width="0" />)<img width="0" /> <img width="0" />{<img width="0" /> <img width="0" />e<img width="0" />c<img width="0" />h<img width="0" />o<img width="0" /> <img width="0" />"<img width="0" />$<img width="0" />@<img width="0" />"<img width="0" />;<img width="0" /> <img width="0" />e<img width="0" />x<img width="0" />i<img width="0" />t<img width="0" /> <img width="0" />1<img width="0" />;<img width="0" /> <img width="0" />}<img width="0" />
+</span></div>
+<div class='console output'></div>
+<div class='console'><span class='prompt'>~<img width="0" /> $ </span><span class='cmd'>$<img width="0" />B<img width="0" />R<img width="0" />O<img width="0" />W<img width="0" />S<img width="0" />E<img width="0" />R<img width="0" /> <img width="0" />"<img width="0" />a<img width="0" />.<img width="0" />h<img width="0" />t<img width="0" />m<img width="0" />l<img width="0" />"<img width="0" />
+</span></div>
+<iframe src="011-browser.html.iframe.hello.html">Your browser does not support iframes.</iframe><p class='text'>
+Reusing iframe name fails.
+</p>
+<div class='console'><span class='prompt'>~<img width="0" /> $ </span><span class='cmd'>d<img width="0" />i<img width="0" />e<img width="0" />(<img width="0" />)<img width="0" /> <img width="0" />{<img width="0" /> <img width="0" />h<img width="0" />t<img width="0" />m<img width="0" />l<img width="0" /> <img width="0" />"<img width="0" />d<img width="0" />i<img width="0" />e<img width="0" />d<img width="0" />:<img width="0" /> <img width="0" />$<img width="0" />@<img width="0" />"<img width="0" />;<img width="0" /> <img width="0" />}<img width="0" />
+</span></div>
+<div class='console output'></div>
+<div class='console'><span class='prompt'>~<img width="0" /> $ </span><span class='cmd'>$<img width="0" />E<img width="0" />D<img width="0" />I<img width="0" />T<img width="0" />O<img width="0" />R<img width="0" /> <img width="0" />"<img width="0" />a<img width="0" />.<img width="0" />h<img width="0" />t<img width="0" />m<img width="0" />l<img width="0" />"<img width="0" />
+</span></div>
+<div class='editor'>
+<div class='keep line'>&lt;html>&lt;body></div>
+<div class='del line'>&lt;p>Hello&lt;/p></div>
+<div class='add line'>&lt;p>Hello 2&lt;/p></div>
+<div class='keep line'>&lt;/body>&lt;/html></div>
+</div>
+<div class='console'><span class='prompt'>~<img width="0" /> $ </span><span class='cmd'>$<img width="0" />B<img width="0" />R<img width="0" />O<img width="0" />W<img width="0" />S<img width="0" />E<img width="0" />R<img width="0" /> <img width="0" />"<img width="0" />a<img width="0" />.<img width="0" />h<img width="0" />t<img width="0" />m<img width="0" />l<img width="0" />"<img width="0" />
+</span></div>
+died: Cannot browse, iframe name already used: hello<div class='console'><span class='prompt'>~<img width="0" /> $ </span><span class='cmd'>d<img width="0" />i<img width="0" />e<img width="0" />(<img width="0" />)<img width="0" /> <img width="0" />{<img width="0" /> <img width="0" />e<img width="0" />c<img width="0" />h<img width="0" />o<img width="0" /> <img width="0" />"<img width="0" />$<img width="0" />@<img width="0" />"<img width="0" />;<img width="0" /> <img width="0" />e<img width="0" />x<img width="0" />i<img width="0" />t<img width="0" /> <img width="0" />1<img width="0" />;<img width="0" /> <img width="0" />}<img width="0" />
+</span></div>
+<div class='console output'></div>
+<p class='text'>
+New browse succeeds with different iframe name.
+</p>
+<div class='console'><span class='prompt'>~<img width="0" /> $ </span><span class='cmd'>$<img width="0" />B<img width="0" />R<img width="0" />O<img width="0" />W<img width="0" />S<img width="0" />E<img width="0" />R<img width="0" /> <img width="0" />"<img width="0" />a<img width="0" />.<img width="0" />h<img width="0" />t<img width="0" />m<img width="0" />l<img width="0" />"<img width="0" />
+</span></div>
+<iframe src="011-browser.html.iframe.hello2.html">Your browser does not support iframes.</iframe>

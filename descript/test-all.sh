@@ -45,9 +45,11 @@ done
 OUT=$TARGET/actual-outs/full-docs/concatenated-fragments.html
 start
 html-start
-cat "$TARGET"/actual-outs/fragments/*.html >> "$OUT"
+find "$TARGET"/actual-outs/fragments -name '*.html' -not -name '*.iframe.*' | sort | xargs cat >> "$OUT"
 html-end
 end
+
+cp "$TARGET/actual-outs/fragments/"*.iframe.*.html "$TARGET/actual-outs/full-docs"/
 
 assert-doc-outs
 yippielog "All tests pass, verify results visually from $OUT"

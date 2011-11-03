@@ -266,3 +266,27 @@ diffedit() {
   patch -s "$NEWFILE" "$DIFFFILE"
   cat "$NEWFILE" | edit "$FILE" "$EDITNAME"
 }
+
+browser() {
+  [ $# == 2 ] || {
+    die "Usage: browser FILE IFRAMENAME"
+    return # needed when die disabled
+  }
+  local FILE=$1
+  local IFRAMENAME=$2
+  local IFRAMEFILE=$OUT.iframe.$IFRAMENAME.html
+  log "browser $FILE"
+  debuglog "IFRAMEFILE=$IFRAMEFILE"
+  local IFRAMEFILEBASE=$(basename "$IFRAMEFILE")
+  cmd-line "\$BROWSER \"$FILE\""
+  [ -e "$FILE" ] || {
+    die "Cannot browse, file does not exist: $FILE"
+    return
+  }
+  [ -e "$IFRAMEFILE" ] && {
+    die "Cannot browse, iframe name already used: $IFRAMENAME"
+    return
+  }
+  cp "$FILE" "$IFRAMEFILE"
+  html '<iframe src="'$IFRAMEFILEBASE'">Your browser does not support iframes.</iframe>'
+}
