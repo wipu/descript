@@ -24,6 +24,13 @@
   - assert output of ${PIPESTATUS[*]} instead of $?
     e.g. cmde "1 0" false | true
 
+- As user I want to see html output in a mocked browser div so I can learn programs that output html (like descript)
+  + failure if html file missing
+  + simple html file
+    + copy file near OUT and iframe to it
+    + copy iframe files in test so the links work
+  - include whole descript doc in another to finetune properties of iframe
+
 - bugfix: normal echo (without >>) in a script must not delete previous echos even if descript redirects output to file internally
 
 - bugfix: descript must not fail with "...tmp already exists" when retrying after failed run
