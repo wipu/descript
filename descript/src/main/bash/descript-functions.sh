@@ -188,7 +188,11 @@ prompt() {
 #
 # hacked html entities (&amp; and &lt;) are dehacked.
 # TODO find a less ugly way to handle them.
+#
+# the img element is around all chars, not just between, to handle multiple
+# spaces in the beginning or end correctly
 spaced() {
+  echo -n '<img width="0" />'
   sed 's:\(.\):\1<img width="0" />:g' |
   sed 's:\&<img width="0" />a<img width="0" />m<img width="0" />p<img width="0" />;<img width="0" />:\&amp;:g' |
   sed 's:\&<img width="0" />l<img width="0" />t<img width="0" />;<img width="0" />:\&lt;:g' |
