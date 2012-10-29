@@ -30,4 +30,29 @@ out-was <<EOF
 file1 line1, modified
 file1 line3, added
 EOF
+p "Empty lines also work in editor:"
+edit file1 add-empty-line <<EOF
+file1 line1, modified
+file1 line3, added
+empty line below:
+
+empty line above
+EOF
+edit file1 keep-empty-line <<EOF
+file1 line1, modified
+file1 line3, added
+empty line below:
+
+empty line above and 2 below
+
+
+EOF
+edit file1 del-empty-line <<EOF
+file1 line1, modified
+file1 line3, added
+empty line below:
+
+empty line above and
+none below
+EOF
 }

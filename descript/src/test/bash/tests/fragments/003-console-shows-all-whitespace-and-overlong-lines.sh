@@ -5,5 +5,6 @@ cmd 'echo "  And overlong lines are broken automatically, but there is no linebr
 cmd "mkdir 'extra   whitespace   also works in prompt  '"
 cmd "cd 'extra   whitespace   also works in prompt  '"
 cmd 'echo lines are not broken at word boundary. Thisoverlongwordcannotbeononelineonlyinsteaditmustbebrokenatsomepoint.'
+cmd 'echo empty line; echo; echo in output'
 cmd "cd .."
 }
