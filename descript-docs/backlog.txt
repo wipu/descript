@@ -24,6 +24,14 @@
   - assert output of ${PIPESTATUS[*]} instead of $?
     e.g. cmde "1 0" false | true
 
++ bugfix: 2 spaces in output start are shown only as one
+  + put img also before the text, not only after each char
+
++ bugfix: empty lines in edits are not visible
+  + also see if this affects cmd output etc
+  + edit file with empty line and add empty line
+  + fix by adding min-height:1em to css class "line"
+
 - As user I want to see html output in a mocked browser div so I can learn programs that output html (like descript)
   + failure if html file missing
   + simple html file
@@ -34,8 +42,6 @@
 - bugfix: normal echo (without >>) in a script must not delete previous echos even if descript redirects output to file internally
 
 - bugfix: descript must not fail with "...tmp already exists" when retrying after failed run
-
-- bugfix: 2 spaces in output start are shown only as one
 
 - As iwant developer I want my document name "Tutorial" to be visible as a header and page title
 
