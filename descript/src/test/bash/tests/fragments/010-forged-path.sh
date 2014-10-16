@@ -20,5 +20,15 @@ cmd "echo PWD expanded in the descript script: $PWD"
 out-was <<EOF
 PWD expanded in the descript script: $PWD
 EOF
+p 'Home directory is forged, if absolute path points outside working area.'
+cmd "readlink -f $HOME"
+out-was <<EOF
+/home/hacker
+EOF
+cmd "echo $HOME/some/path"
+out-was <<EOF
+/home/hacker/some/path
+EOF
+
 cmd 'cd ..'
 }
