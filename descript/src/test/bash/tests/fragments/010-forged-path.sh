@@ -23,11 +23,11 @@ EOF
 p 'Home directory is forged, if absolute path points outside working area.'
 cmd "readlink -f $HOME"
 out-was <<EOF
-/home/hacker
+$HOME
 EOF
-cmd "echo $HOME/some/path"
+cmd "echo $HOME/some/path '$HOME/other/path'"
 out-was <<EOF
-/home/hacker/some/path
+$HOME/some/path $HOME/other/path
 EOF
 
 cmd 'cd ..'

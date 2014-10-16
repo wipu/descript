@@ -32,7 +32,7 @@
   + edit file with empty line and add empty line
   + fix by adding min-height:1em to css class "line"
 
-- bugfix: replace home in commandline with /home/hacker even when it's not the work directory but some upper dir
++ bugfix: replace home in commandline with /home/hacker even when it's not the work directory but some upper dir
 
 - As user I want to see html output in a mocked browser div so I can learn programs that output html (like descript)
   + failure if html file missing

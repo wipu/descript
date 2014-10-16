@@ -211,7 +211,7 @@ cmd-line() {
 }
 
 forged-path() {
-  to-relative '/home/hacker'
+  to-relative '/home/hacker' | sed "s:$HOME:/home/hacker:g"
 }
 
 editdir-of() {
