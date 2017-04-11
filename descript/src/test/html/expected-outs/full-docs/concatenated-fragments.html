@@ -2,7 +2,8 @@
 <style type='text/css'>
 body {font: 12px verdana, arial, sans-serif;}
 .text {width:65em;}
-.console {background-color:black;font-family:monospace;margin-left:33px;width:60em;}
+.console {background-color:black;color:red;font-family:monospace;margin-left:33px;width:60em;}
+.shell {word-break:break-all;white-space:pre-wrap;display:inline;}
 .prompt {font-weight:bold;color:green;}
 .cmd {color:white;}
 .output {color:gray;}
@@ -15,160 +16,134 @@ div.keep {background-color: #ffffff;;}
 </style>
 </head><body>
 <h2>Forged prompt shows current working directory</h2>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />m<img width="0" />k<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" /> <img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />1<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /></div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />c<img width="0" />d<img width="0" /> <img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />1<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /></div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" />/<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />1<img width="0" /> $ </span><span class='cmd'><img width="0" />m<img width="0" />k<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" /> <img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />2<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /></div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" />/<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />1<img width="0" /> $ </span><span class='cmd'><img width="0" />c<img width="0" />d<img width="0" /> <img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />2<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /></div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" />/<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />1<img width="0" />/<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />2<img width="0" /> $ </span><span class='cmd'><img width="0" />c<img width="0" />d<img width="0" /> <img width="0" />.<img width="0" />.<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /></div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" />/<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />1<img width="0" /> $ </span><span class='cmd'><img width="0" />c<img width="0" />d<img width="0" /> <img width="0" />.<img width="0" />.<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /></div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />#<img width="0" /> <img width="0" />b<img width="0" />a<img width="0" />c<img width="0" />k<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>mkdir dir1</kbd><br/>
+</samp></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>cd dir1</kbd><br/>
+</samp></div>
+<div class='console'><samp><kbd class='shell prompt'>~/dir1 $ </kbd><kbd class='shell cmd'>mkdir dir2</kbd><br/>
+</samp></div>
+<div class='console'><samp><kbd class='shell prompt'>~/dir1 $ </kbd><kbd class='shell cmd'>cd dir2</kbd><br/>
+</samp></div>
+<div class='console'><samp><kbd class='shell prompt'>~/dir1/dir2 $ </kbd><kbd class='shell cmd'>cd ..</kbd><br/>
+</samp></div>
+<div class='console'><samp><kbd class='shell prompt'>~/dir1 $ </kbd><kbd class='shell cmd'>cd ..</kbd><br/>
+</samp></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'># back</kbd><br/>
+</samp></div>
 <h2>Console shows all whitespace and overlong lines</h2>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />e<img width="0" />c<img width="0" />h<img width="0" />o<img width="0" /> <img width="0" /> <img width="0" />"<img width="0" />a<img width="0" />l<img width="0" />l<img width="0" /> <img width="0" /> <img width="0" />"<img width="0" /> <img width="0" /> <img width="0" /> <img width="0" />w<img width="0" />h<img width="0" />i<img width="0" />t<img width="0" />e<img width="0" />s<img width="0" />p<img width="0" />a<img width="0" />c<img width="0" />e<img width="0" /> <img width="0" />i<img width="0" />s<img width="0" /> <img width="0" />p<img width="0" />r<img width="0" />e<img width="0" />s<img width="0" />e<img width="0" />r<img width="0" />v<img width="0" />e<img width="0" />d<img width="0" /> <img width="0" /> <img width="0" /> <img width="0" /> <img width="0" /> <img width="0" />.<img width="0" />
-</span></div>
-<div class='console output'><img width="0" />a<img width="0" />l<img width="0" />l<img width="0" /> <img width="0" /> <img width="0" /> <img width="0" />w<img width="0" />h<img width="0" />i<img width="0" />t<img width="0" />e<img width="0" />s<img width="0" />p<img width="0" />a<img width="0" />c<img width="0" />e<img width="0" /> <img width="0" />i<img width="0" />s<img width="0" /> <img width="0" />p<img width="0" />r<img width="0" />e<img width="0" />s<img width="0" />e<img width="0" />r<img width="0" />v<img width="0" />e<img width="0" />d<img width="0" /> <img width="0" />.<img width="0" />
-</div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />e<img width="0" />c<img width="0" />h<img width="0" />o<img width="0" /> <img width="0" />"<img width="0" /> <img width="0" /> <img width="0" />A<img width="0" />n<img width="0" />d<img width="0" /> <img width="0" />o<img width="0" />v<img width="0" />e<img width="0" />r<img width="0" />l<img width="0" />o<img width="0" />n<img width="0" />g<img width="0" /> <img width="0" />l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" />s<img width="0" /> <img width="0" />a<img width="0" />r<img width="0" />e<img width="0" /> <img width="0" />b<img width="0" />r<img width="0" />o<img width="0" />k<img width="0" />e<img width="0" />n<img width="0" /> <img width="0" />a<img width="0" />u<img width="0" />t<img width="0" />o<img width="0" />m<img width="0" />a<img width="0" />t<img width="0" />i<img width="0" />c<img width="0" />a<img width="0" />l<img width="0" />l<img width="0" />y<img width="0" />,<img width="0" /> <img width="0" />b<img width="0" />u<img width="0" />t<img width="0" /> <img width="0" />t<img width="0" />h<img width="0" />e<img width="0" />r<img width="0" />e<img width="0" /> <img width="0" />i<img width="0" />s<img width="0" /> <img width="0" />n<img width="0" />o<img width="0" /> <img width="0" />l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" />b<img width="0" />r<img width="0" />e<img width="0" />a<img width="0" />k<img width="0" />,<img width="0" /> <img width="0" />s<img width="0" />o<img width="0" /> <img width="0" />t<img width="0" />h<img width="0" />e<img width="0" /> <img width="0" />r<img width="0" />e<img width="0" />a<img width="0" />d<img width="0" />e<img width="0" />r<img width="0" /> <img width="0" />c<img width="0" />a<img width="0" />n<img width="0" /> <img width="0" />c<img width="0" />o<img width="0" />p<img width="0" />y<img width="0" />-<img width="0" />p<img width="0" />a<img width="0" />s<img width="0" />t<img width="0" />e<img width="0" /> <img width="0" />t<img width="0" />h<img width="0" />e<img width="0" /> <img width="0" />t<img width="0" />e<img width="0" />x<img width="0" />t<img width="0" /> <img width="0" />w<img width="0" />i<img width="0" />t<img width="0" />h<img width="0" />o<img width="0" />u<img width="0" />t<img width="0" /> <img width="0" />g<img width="0" />e<img width="0" />t<img width="0" />t<img width="0" />i<img width="0" />n<img width="0" />g<img width="0" /> <img width="0" />a<img width="0" />n<img width="0" />y<img width="0" /> <img width="0" /> <img width="0" /> <img width="0" />e<img width="0" />x<img width="0" />t<img width="0" />r<img width="0" />a<img width="0" /> <img width="0" /> <img width="0" /> <img width="0" />l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" />b<img width="0" />r<img width="0" />e<img width="0" />a<img width="0" />k<img width="0" />s<img width="0" />.<img width="0" /> <img width="0" /> <img width="0" />"<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /> <img width="0" /> <img width="0" />A<img width="0" />n<img width="0" />d<img width="0" /> <img width="0" />o<img width="0" />v<img width="0" />e<img width="0" />r<img width="0" />l<img width="0" />o<img width="0" />n<img width="0" />g<img width="0" /> <img width="0" />l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" />s<img width="0" /> <img width="0" />a<img width="0" />r<img width="0" />e<img width="0" /> <img width="0" />b<img width="0" />r<img width="0" />o<img width="0" />k<img width="0" />e<img width="0" />n<img width="0" /> <img width="0" />a<img width="0" />u<img width="0" />t<img width="0" />o<img width="0" />m<img width="0" />a<img width="0" />t<img width="0" />i<img width="0" />c<img width="0" />a<img width="0" />l<img width="0" />l<img width="0" />y<img width="0" />,<img width="0" /> <img width="0" />b<img width="0" />u<img width="0" />t<img width="0" /> <img width="0" />t<img width="0" />h<img width="0" />e<img width="0" />r<img width="0" />e<img width="0" /> <img width="0" />i<img width="0" />s<img width="0" /> <img width="0" />n<img width="0" />o<img width="0" /> <img width="0" />l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" />b<img width="0" />r<img width="0" />e<img width="0" />a<img width="0" />k<img width="0" />,<img width="0" /> <img width="0" />s<img width="0" />o<img width="0" /> <img width="0" />t<img width="0" />h<img width="0" />e<img width="0" /> <img width="0" />r<img width="0" />e<img width="0" />a<img width="0" />d<img width="0" />e<img width="0" />r<img width="0" /> <img width="0" />c<img width="0" />a<img width="0" />n<img width="0" /> <img width="0" />c<img width="0" />o<img width="0" />p<img width="0" />y<img width="0" />-<img width="0" />p<img width="0" />a<img width="0" />s<img width="0" />t<img width="0" />e<img width="0" /> <img width="0" />t<img width="0" />h<img width="0" />e<img width="0" /> <img width="0" />t<img width="0" />e<img width="0" />x<img width="0" />t<img width="0" /> <img width="0" />w<img width="0" />i<img width="0" />t<img width="0" />h<img width="0" />o<img width="0" />u<img width="0" />t<img width="0" /> <img width="0" />g<img width="0" />e<img width="0" />t<img width="0" />t<img width="0" />i<img width="0" />n<img width="0" />g<img width="0" /> <img width="0" />a<img width="0" />n<img width="0" />y<img width="0" /> <img width="0" /> <img width="0" /> <img width="0" />e<img width="0" />x<img width="0" />t<img width="0" />r<img width="0" />a<img width="0" /> <img width="0" /> <img width="0" /> <img width="0" />l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" />b<img width="0" />r<img width="0" />e<img width="0" />a<img width="0" />k<img width="0" />s<img width="0" />.<img width="0" /> <img width="0" /> <img width="0" />
-</div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />m<img width="0" />k<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" /> <img width="0" />'<img width="0" />e<img width="0" />x<img width="0" />t<img width="0" />r<img width="0" />a<img width="0" /> <img width="0" /> <img width="0" /> <img width="0" />w<img width="0" />h<img width="0" />i<img width="0" />t<img width="0" />e<img width="0" />s<img width="0" />p<img width="0" />a<img width="0" />c<img width="0" />e<img width="0" /> <img width="0" /> <img width="0" /> <img width="0" />a<img width="0" />l<img width="0" />s<img width="0" />o<img width="0" /> <img width="0" />w<img width="0" />o<img width="0" />r<img width="0" />k<img width="0" />s<img width="0" /> <img width="0" />i<img width="0" />n<img width="0" /> <img width="0" />p<img width="0" />r<img width="0" />o<img width="0" />m<img width="0" />p<img width="0" />t<img width="0" /> <img width="0" /> <img width="0" />'<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /></div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />c<img width="0" />d<img width="0" /> <img width="0" />'<img width="0" />e<img width="0" />x<img width="0" />t<img width="0" />r<img width="0" />a<img width="0" /> <img width="0" /> <img width="0" /> <img width="0" />w<img width="0" />h<img width="0" />i<img width="0" />t<img width="0" />e<img width="0" />s<img width="0" />p<img width="0" />a<img width="0" />c<img width="0" />e<img width="0" /> <img width="0" /> <img width="0" /> <img width="0" />a<img width="0" />l<img width="0" />s<img width="0" />o<img width="0" /> <img width="0" />w<img width="0" />o<img width="0" />r<img width="0" />k<img width="0" />s<img width="0" /> <img width="0" />i<img width="0" />n<img width="0" /> <img width="0" />p<img width="0" />r<img width="0" />o<img width="0" />m<img width="0" />p<img width="0" />t<img width="0" /> <img width="0" /> <img width="0" />'<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /></div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" />/<img width="0" />e<img width="0" />x<img width="0" />t<img width="0" />r<img width="0" />a<img width="0" /> <img width="0" /> <img width="0" /> <img width="0" />w<img width="0" />h<img width="0" />i<img width="0" />t<img width="0" />e<img width="0" />s<img width="0" />p<img width="0" />a<img width="0" />c<img width="0" />e<img width="0" /> <img width="0" /> <img width="0" /> <img width="0" />a<img width="0" />l<img width="0" />s<img width="0" />o<img width="0" /> <img width="0" />w<img width="0" />o<img width="0" />r<img width="0" />k<img width="0" />s<img width="0" /> <img width="0" />i<img width="0" />n<img width="0" /> <img width="0" />p<img width="0" />r<img width="0" />o<img width="0" />m<img width="0" />p<img width="0" />t<img width="0" /> <img width="0" /> <img width="0" /> $ </span><span class='cmd'><img width="0" />e<img width="0" />c<img width="0" />h<img width="0" />o<img width="0" /> <img width="0" />l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" />s<img width="0" /> <img width="0" />a<img width="0" />r<img width="0" />e<img width="0" /> <img width="0" />n<img width="0" />o<img width="0" />t<img width="0" /> <img width="0" />b<img width="0" />r<img width="0" />o<img width="0" />k<img width="0" />e<img width="0" />n<img width="0" /> <img width="0" />a<img width="0" />t<img width="0" /> <img width="0" />w<img width="0" />o<img width="0" />r<img width="0" />d<img width="0" /> <img width="0" />b<img width="0" />o<img width="0" />u<img width="0" />n<img width="0" />d<img width="0" />a<img width="0" />r<img width="0" />y<img width="0" />.<img width="0" /> <img width="0" />T<img width="0" />h<img width="0" />i<img width="0" />s<img width="0" />o<img width="0" />v<img width="0" />e<img width="0" />r<img width="0" />l<img width="0" />o<img width="0" />n<img width="0" />g<img width="0" />w<img width="0" />o<img width="0" />r<img width="0" />d<img width="0" />c<img width="0" />a<img width="0" />n<img width="0" />n<img width="0" />o<img width="0" />t<img width="0" />b<img width="0" />e<img width="0" />o<img width="0" />n<img width="0" />o<img width="0" />n<img width="0" />e<img width="0" />l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" />o<img width="0" />n<img width="0" />l<img width="0" />y<img width="0" />i<img width="0" />n<img width="0" />s<img width="0" />t<img width="0" />e<img width="0" />a<img width="0" />d<img width="0" />i<img width="0" />t<img width="0" />m<img width="0" />u<img width="0" />s<img width="0" />t<img width="0" />b<img width="0" />e<img width="0" />b<img width="0" />r<img width="0" />o<img width="0" />k<img width="0" />e<img width="0" />n<img width="0" />a<img width="0" />t<img width="0" />s<img width="0" />o<img width="0" />m<img width="0" />e<img width="0" />p<img width="0" />o<img width="0" />i<img width="0" />n<img width="0" />t<img width="0" />.<img width="0" />
-</span></div>
-<div class='console output'><img width="0" />l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" />s<img width="0" /> <img width="0" />a<img width="0" />r<img width="0" />e<img width="0" /> <img width="0" />n<img width="0" />o<img width="0" />t<img width="0" /> <img width="0" />b<img width="0" />r<img width="0" />o<img width="0" />k<img width="0" />e<img width="0" />n<img width="0" /> <img width="0" />a<img width="0" />t<img width="0" /> <img width="0" />w<img width="0" />o<img width="0" />r<img width="0" />d<img width="0" /> <img width="0" />b<img width="0" />o<img width="0" />u<img width="0" />n<img width="0" />d<img width="0" />a<img width="0" />r<img width="0" />y<img width="0" />.<img width="0" /> <img width="0" />T<img width="0" />h<img width="0" />i<img width="0" />s<img width="0" />o<img width="0" />v<img width="0" />e<img width="0" />r<img width="0" />l<img width="0" />o<img width="0" />n<img width="0" />g<img width="0" />w<img width="0" />o<img width="0" />r<img width="0" />d<img width="0" />c<img width="0" />a<img width="0" />n<img width="0" />n<img width="0" />o<img width="0" />t<img width="0" />b<img width="0" />e<img width="0" />o<img width="0" />n<img width="0" />o<img width="0" />n<img width="0" />e<img width="0" />l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" />o<img width="0" />n<img width="0" />l<img width="0" />y<img width="0" />i<img width="0" />n<img width="0" />s<img width="0" />t<img width="0" />e<img width="0" />a<img width="0" />d<img width="0" />i<img width="0" />t<img width="0" />m<img width="0" />u<img width="0" />s<img width="0" />t<img width="0" />b<img width="0" />e<img width="0" />b<img width="0" />r<img width="0" />o<img width="0" />k<img width="0" />e<img width="0" />n<img width="0" />a<img width="0" />t<img width="0" />s<img width="0" />o<img width="0" />m<img width="0" />e<img width="0" />p<img width="0" />o<img width="0" />i<img width="0" />n<img width="0" />t<img width="0" />.<img width="0" />
-</div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" />/<img width="0" />e<img width="0" />x<img width="0" />t<img width="0" />r<img width="0" />a<img width="0" /> <img width="0" /> <img width="0" /> <img width="0" />w<img width="0" />h<img width="0" />i<img width="0" />t<img width="0" />e<img width="0" />s<img width="0" />p<img width="0" />a<img width="0" />c<img width="0" />e<img width="0" /> <img width="0" /> <img width="0" /> <img width="0" />a<img width="0" />l<img width="0" />s<img width="0" />o<img width="0" /> <img width="0" />w<img width="0" />o<img width="0" />r<img width="0" />k<img width="0" />s<img width="0" /> <img width="0" />i<img width="0" />n<img width="0" /> <img width="0" />p<img width="0" />r<img width="0" />o<img width="0" />m<img width="0" />p<img width="0" />t<img width="0" /> <img width="0" /> <img width="0" /> $ </span><span class='cmd'><img width="0" />e<img width="0" />c<img width="0" />h<img width="0" />o<img width="0" /> <img width="0" />e<img width="0" />m<img width="0" />p<img width="0" />t<img width="0" />y<img width="0" /> <img width="0" />l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" />;<img width="0" /> <img width="0" />e<img width="0" />c<img width="0" />h<img width="0" />o<img width="0" />;<img width="0" /> <img width="0" />e<img width="0" />c<img width="0" />h<img width="0" />o<img width="0" /> <img width="0" />i<img width="0" />n<img width="0" /> <img width="0" />o<img width="0" />u<img width="0" />t<img width="0" />p<img width="0" />u<img width="0" />t<img width="0" />
-</span></div>
-<div class='console output'><img width="0" />e<img width="0" />m<img width="0" />p<img width="0" />t<img width="0" />y<img width="0" /> <img width="0" />l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" /><br/>
-<br/>
-i<img width="0" />n<img width="0" /> <img width="0" />o<img width="0" />u<img width="0" />t<img width="0" />p<img width="0" />u<img width="0" />t<img width="0" />
-</div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" />/<img width="0" />e<img width="0" />x<img width="0" />t<img width="0" />r<img width="0" />a<img width="0" /> <img width="0" /> <img width="0" /> <img width="0" />w<img width="0" />h<img width="0" />i<img width="0" />t<img width="0" />e<img width="0" />s<img width="0" />p<img width="0" />a<img width="0" />c<img width="0" />e<img width="0" /> <img width="0" /> <img width="0" /> <img width="0" />a<img width="0" />l<img width="0" />s<img width="0" />o<img width="0" /> <img width="0" />w<img width="0" />o<img width="0" />r<img width="0" />k<img width="0" />s<img width="0" /> <img width="0" />i<img width="0" />n<img width="0" /> <img width="0" />p<img width="0" />r<img width="0" />o<img width="0" />m<img width="0" />p<img width="0" />t<img width="0" /> <img width="0" /> <img width="0" /> $ </span><span class='cmd'><img width="0" />c<img width="0" />d<img width="0" /> <img width="0" />.<img width="0" />.<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>echo  "all  "   whitespace is preserved     .</kbd><br/>
+<kbd class='shell output'>all   whitespace is preserved .</kbd><br/>
+</samp></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>echo "  And overlong lines are broken automatically, but there is no linebreak, so the reader can copy-paste the text without getting any   extra   linebreaks.  "</kbd><br/>
+<kbd class='shell output'>  And overlong lines are broken automatically, but there is no linebreak, so the reader can copy-paste the text without getting any   extra   linebreaks.  </kbd><br/>
+</samp></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>mkdir 'extra   whitespace   also works in prompt  '</kbd><br/>
+</samp></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>cd 'extra   whitespace   also works in prompt  '</kbd><br/>
+</samp></div>
+<div class='console'><samp><kbd class='shell prompt'>~/extra   whitespace   also works in prompt   $ </kbd><kbd class='shell cmd'>echo lines are not broken at word boundary. Thisoverlongwordcannotbeononelineonlyinsteaditmustbebrokenatsomepoint.</kbd><br/>
+<kbd class='shell output'>lines are not broken at word boundary. Thisoverlongwordcannotbeononelineonlyinsteaditmustbebrokenatsomepoint.</kbd><br/>
+</samp></div>
+<div class='console'><samp><kbd class='shell prompt'>~/extra   whitespace   also works in prompt   $ </kbd><kbd class='shell cmd'>echo empty line; echo; echo in output</kbd><br/>
+<kbd class='shell output'>empty line</kbd><br/>
+<kbd class='shell output'></kbd><br/>
+<kbd class='shell output'>in output</kbd><br/>
+</samp></div>
+<div class='console'><samp><kbd class='shell prompt'>~/extra   whitespace   also works in prompt   $ </kbd><kbd class='shell cmd'>cd ..</kbd><br/>
+</samp></div>
 <h2>Asserting output of cmd</h2>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />d<img width="0" />i<img width="0" />e<img width="0" />(<img width="0" />)<img width="0" /> <img width="0" />{<img width="0" /> <img width="0" />h<img width="0" />t<img width="0" />m<img width="0" />l<img width="0" /> <img width="0" />"<img width="0" />d<img width="0" />i<img width="0" />e<img width="0" />d<img width="0" />:<img width="0" /> <img width="0" />$<img width="0" />@<img width="0" />"<img width="0" />;<img width="0" /> <img width="0" />}<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>die() { html "died: $@"; }</kbd><br/>
+</samp></div>
 <p class='text'>
 Function out-was can be used to assert cmd output
 </p>
 <p class='text'>
 First, the empty case, success:
 </p>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />t<img width="0" />r<img width="0" />u<img width="0" />e<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>true</kbd><br/>
+</samp></div>
 <div><span class='output-asserted'><i>Output asserted</i></span></div>
 <p class='text'>
 And failure:
 </p>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />t<img width="0" />r<img width="0" />u<img width="0" />e<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>true</kbd><br/>
+</samp></div>
 died: Error in command output, see diff output for details.<div><span class='output-asserted'><i>Output asserted</i></span></div>
 <p class='text'>
 Then non-empty:
 </p>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />e<img width="0" />c<img width="0" />h<img width="0" />o<img width="0" /> <img width="0" />"<img width="0" />n<img width="0" />o<img width="0" />n<img width="0" />-<img width="0" />e<img width="0" />m<img width="0" />p<img width="0" />t<img width="0" />y<img width="0" /> <img width="0" />o<img width="0" />u<img width="0" />t<img width="0" />p<img width="0" />u<img width="0" />t<img width="0" />"<img width="0" />
-</span></div>
-<div class='console output'><img width="0" />n<img width="0" />o<img width="0" />n<img width="0" />-<img width="0" />e<img width="0" />m<img width="0" />p<img width="0" />t<img width="0" />y<img width="0" /> <img width="0" />o<img width="0" />u<img width="0" />t<img width="0" />p<img width="0" />u<img width="0" />t<img width="0" />
-</div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>echo "non-empty output"</kbd><br/>
+<kbd class='shell output'>non-empty output</kbd><br/>
+</samp></div>
 <div><span class='output-asserted'><i>Output asserted</i></span></div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />e<img width="0" />c<img width="0" />h<img width="0" />o<img width="0" /> <img width="0" />"<img width="0" />a<img width="0" />c<img width="0" />t<img width="0" />u<img width="0" />a<img width="0" />l<img width="0" />"<img width="0" />
-</span></div>
-<div class='console output'><img width="0" />a<img width="0" />c<img width="0" />t<img width="0" />u<img width="0" />a<img width="0" />l<img width="0" />
-</div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>echo "actual"</kbd><br/>
+<kbd class='shell output'>actual</kbd><br/>
+</samp></div>
 died: Error in command output, see diff output for details.<div><span class='output-asserted'><i>Output asserted</i></span></div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />d<img width="0" />i<img width="0" />e<img width="0" />(<img width="0" />)<img width="0" /> <img width="0" />{<img width="0" /> <img width="0" />e<img width="0" />r<img width="0" />r<img width="0" />o<img width="0" />r<img width="0" />l<img width="0" />o<img width="0" />g<img width="0" /> <img width="0" />"<img width="0" />$<img width="0" />@<img width="0" />"<img width="0" />;<img width="0" /> <img width="0" />e<img width="0" />x<img width="0" />i<img width="0" />t<img width="0" /> <img width="0" />1<img width="0" />;<img width="0" /> <img width="0" />}<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>die() { errorlog "$@"; exit 1; }</kbd><br/>
+</samp></div>
 <p class='text'>
 stdout and stderr get combined. TODO is there a way to interleave them naturally but still assert them separately?
 </p>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />e<img width="0" />c<img width="0" />h<img width="0" />o<img width="0" /> <img width="0" />e<img width="0" />r<img width="0" />r<img width="0" /> <img width="0" />><img width="0" /> <img width="0" />/<img width="0" />d<img width="0" />e<img width="0" />v<img width="0" />/<img width="0" />s<img width="0" />t<img width="0" />d<img width="0" />e<img width="0" />r<img width="0" />r<img width="0" />
-</span></div>
-<div class='console output'><img width="0" />e<img width="0" />r<img width="0" />r<img width="0" />
-</div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>echo err > /dev/stderr</kbd><br/>
+<kbd class='shell output'>err</kbd><br/>
+</samp></div>
 <div><span class='output-asserted'><i>Output asserted</i></span></div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />e<img width="0" />c<img width="0" />h<img width="0" />o<img width="0" /> <img width="0" />o<img width="0" />u<img width="0" />t<img width="0" /> <img width="0" />><img width="0" />><img width="0" /> <img width="0" />/<img width="0" />d<img width="0" />e<img width="0" />v<img width="0" />/<img width="0" />s<img width="0" />t<img width="0" />d<img width="0" />o<img width="0" />u<img width="0" />t<img width="0" /> <img width="0" />&amp;&amp; <img width="0" />e<img width="0" />c<img width="0" />h<img width="0" />o<img width="0" /> <img width="0" />e<img width="0" />r<img width="0" />r<img width="0" /> <img width="0" />><img width="0" />><img width="0" /> <img width="0" />/<img width="0" />d<img width="0" />e<img width="0" />v<img width="0" />/<img width="0" />s<img width="0" />t<img width="0" />d<img width="0" />e<img width="0" />r<img width="0" />r<img width="0" />
-</span></div>
-<div class='console output'><img width="0" />o<img width="0" />u<img width="0" />t<img width="0" /><br/>
-e<img width="0" />r<img width="0" />r<img width="0" />
-</div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>echo out >> /dev/stdout &amp;&amp; echo err >> /dev/stderr</kbd><br/>
+<kbd class='shell output'>out</kbd><br/>
+<kbd class='shell output'>err</kbd><br/>
+</samp></div>
 <div><span class='output-asserted'><i>Output asserted</i></span></div>
 <p class='text'>
 Since descript uses files to capture output, append is necessary:
 </p>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />e<img width="0" />c<img width="0" />h<img width="0" />o<img width="0" /> <img width="0" />o<img width="0" />u<img width="0" />t<img width="0" /> <img width="0" />><img width="0" /> <img width="0" />/<img width="0" />d<img width="0" />e<img width="0" />v<img width="0" />/<img width="0" />s<img width="0" />t<img width="0" />d<img width="0" />o<img width="0" />u<img width="0" />t<img width="0" /> <img width="0" />&amp;&amp; <img width="0" />e<img width="0" />c<img width="0" />h<img width="0" />o<img width="0" /> <img width="0" />e<img width="0" />r<img width="0" />r<img width="0" /> <img width="0" />><img width="0" /> <img width="0" />/<img width="0" />d<img width="0" />e<img width="0" />v<img width="0" />/<img width="0" />s<img width="0" />t<img width="0" />d<img width="0" />e<img width="0" />r<img width="0" />r<img width="0" />
-</span></div>
-<div class='console output'><img width="0" />e<img width="0" />r<img width="0" />r<img width="0" />
-</div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>echo out > /dev/stdout &amp;&amp; echo err > /dev/stderr</kbd><br/>
+<kbd class='shell output'>err</kbd><br/>
+</samp></div>
 <div><span class='output-asserted'><i>Output asserted</i></span></div>
 <h2>Editing file, inlined content</h2>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />$<img width="0" />E<img width="0" />D<img width="0" />I<img width="0" />T<img width="0" />O<img width="0" />R<img width="0" /> <img width="0" />"<img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" />"<img width="0" />
-</span></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>$EDITOR "file1"</kbd><br/>
+</samp></div>
 <div class='editor'>
 <div class='add line'>file1 line1</div>
 <div class='add line'>file1 line2</div>
 </div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />c<img width="0" />a<img width="0" />t<img width="0" /> <img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" />
-</span></div>
-<div class='console output'><img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" /> <img width="0" />l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" />1<img width="0" /><br/>
-f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" /> <img width="0" />l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" />2<img width="0" />
-</div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>cat file1</kbd><br/>
+<kbd class='shell output'>file1 line1</kbd><br/>
+<kbd class='shell output'>file1 line2</kbd><br/>
+</samp></div>
 <div><span class='output-asserted'><i>Output asserted</i></span></div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />$<img width="0" />E<img width="0" />D<img width="0" />I<img width="0" />T<img width="0" />O<img width="0" />R<img width="0" /> <img width="0" />"<img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" />"<img width="0" />
-</span></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>$EDITOR "file1"</kbd><br/>
+</samp></div>
 <div class='editor'>
 <div class='del line'>file1 line1</div>
 <div class='add line'>file1 line1, modified</div>
 <div class='keep line'>file1 line2</div>
 <div class='add line'>file1 line3, added</div>
 </div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />c<img width="0" />a<img width="0" />t<img width="0" /> <img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" />
-</span></div>
-<div class='console output'><img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" /> <img width="0" />l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" />1<img width="0" />,<img width="0" /> <img width="0" />m<img width="0" />o<img width="0" />d<img width="0" />i<img width="0" />f<img width="0" />i<img width="0" />e<img width="0" />d<img width="0" /><br/>
-f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" /> <img width="0" />l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" />2<img width="0" /><br/>
-f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" /> <img width="0" />l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" />3<img width="0" />,<img width="0" /> <img width="0" />a<img width="0" />d<img width="0" />d<img width="0" />e<img width="0" />d<img width="0" />
-</div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>cat file1</kbd><br/>
+<kbd class='shell output'>file1 line1, modified</kbd><br/>
+<kbd class='shell output'>file1 line2</kbd><br/>
+<kbd class='shell output'>file1 line3, added</kbd><br/>
+</samp></div>
 <div><span class='output-asserted'><i>Output asserted</i></span></div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />$<img width="0" />E<img width="0" />D<img width="0" />I<img width="0" />T<img width="0" />O<img width="0" />R<img width="0" /> <img width="0" />"<img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" />"<img width="0" />
-</span></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>$EDITOR "file1"</kbd><br/>
+</samp></div>
 <div class='editor'>
 <div class='keep line'>file1 line1, modified</div>
 <div class='del line'>file1 line2</div>
 <div class='keep line'>file1 line3, added</div>
 </div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />c<img width="0" />a<img width="0" />t<img width="0" /> <img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" />
-</span></div>
-<div class='console output'><img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" /> <img width="0" />l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" />1<img width="0" />,<img width="0" /> <img width="0" />m<img width="0" />o<img width="0" />d<img width="0" />i<img width="0" />f<img width="0" />i<img width="0" />e<img width="0" />d<img width="0" /><br/>
-f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" /> <img width="0" />l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" />3<img width="0" />,<img width="0" /> <img width="0" />a<img width="0" />d<img width="0" />d<img width="0" />e<img width="0" />d<img width="0" />
-</div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>cat file1</kbd><br/>
+<kbd class='shell output'>file1 line1, modified</kbd><br/>
+<kbd class='shell output'>file1 line3, added</kbd><br/>
+</samp></div>
 <div><span class='output-asserted'><i>Output asserted</i></span></div>
 <p class='text'>
 Empty lines also work in editor:
 </p>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />$<img width="0" />E<img width="0" />D<img width="0" />I<img width="0" />T<img width="0" />O<img width="0" />R<img width="0" /> <img width="0" />"<img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" />"<img width="0" />
-</span></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>$EDITOR "file1"</kbd><br/>
+</samp></div>
 <div class='editor'>
 <div class='keep line'>file1 line1, modified</div>
 <div class='keep line'>file1 line3, added</div>
@@ -176,8 +151,8 @@ Empty lines also work in editor:
 <div class='add line'></div>
 <div class='add line'>empty line above</div>
 </div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />$<img width="0" />E<img width="0" />D<img width="0" />I<img width="0" />T<img width="0" />O<img width="0" />R<img width="0" /> <img width="0" />"<img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" />"<img width="0" />
-</span></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>$EDITOR "file1"</kbd><br/>
+</samp></div>
 <div class='editor'>
 <div class='keep line'>file1 line1, modified</div>
 <div class='keep line'>file1 line3, added</div>
@@ -188,8 +163,8 @@ Empty lines also work in editor:
 <div class='add line'></div>
 <div class='add line'></div>
 </div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />$<img width="0" />E<img width="0" />D<img width="0" />I<img width="0" />T<img width="0" />O<img width="0" />R<img width="0" /> <img width="0" />"<img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" />"<img width="0" />
-</span></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>$EDITOR "file1"</kbd><br/>
+</samp></div>
 <div class='editor'>
 <div class='keep line'>file1 line1, modified</div>
 <div class='keep line'>file1 line3, added</div>
@@ -202,165 +177,140 @@ Empty lines also work in editor:
 <div class='add line'>none below</div>
 </div>
 <h2>Editing file, inlined diff</h2>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />$<img width="0" />E<img width="0" />D<img width="0" />I<img width="0" />T<img width="0" />O<img width="0" />R<img width="0" /> <img width="0" />"<img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" />"<img width="0" />
-</span></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>$EDITOR "file1"</kbd><br/>
+</samp></div>
 <div class='editor'>
 <div class='add line'>line 1</div>
 <div class='add line'>line 2</div>
 </div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />$<img width="0" />E<img width="0" />D<img width="0" />I<img width="0" />T<img width="0" />O<img width="0" />R<img width="0" /> <img width="0" />"<img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" />"<img width="0" />
-</span></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>$EDITOR "file1"</kbd><br/>
+</samp></div>
 <div class='editor'>
 <div class='keep line'>line 1</div>
 <div class='keep line'>line 2</div>
 <div class='add line'>line 3</div>
 </div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />c<img width="0" />a<img width="0" />t<img width="0" /> <img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" />
-</span></div>
-<div class='console output'><img width="0" />l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" /> <img width="0" />1<img width="0" /><br/>
-l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" /> <img width="0" />2<img width="0" /><br/>
-l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" /> <img width="0" />3<img width="0" />
-</div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>cat file1</kbd><br/>
+<kbd class='shell output'>line 1</kbd><br/>
+<kbd class='shell output'>line 2</kbd><br/>
+<kbd class='shell output'>line 3</kbd><br/>
+</samp></div>
 <div><span class='output-asserted'><i>Output asserted</i></span></div>
 <h2>Text may contain reserved HTML characters: &lt;i>i&lt;/i> and &amp;</h2>
 <p class='text'>
 This is a paragraph. It can contain &lt;i>i&lt;/i> and &amp;.
 </p>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />e<img width="0" />c<img width="0" />h<img width="0" />o<img width="0" /> <img width="0" />"<img width="0" />A<img width="0" />n<img width="0" />d<img width="0" /> <img width="0" />a<img width="0" />l<img width="0" />s<img width="0" />o<img width="0" /> <img width="0" />c<img width="0" />o<img width="0" />m<img width="0" />m<img width="0" />a<img width="0" />n<img width="0" />d<img width="0" />s<img width="0" /> <img width="0" />a<img width="0" />n<img width="0" />d<img width="0" /> <img width="0" />t<img width="0" />h<img width="0" />e<img width="0" />i<img width="0" />r<img width="0" /> <img width="0" />o<img width="0" />u<img width="0" />t<img width="0" />p<img width="0" />u<img width="0" />t<img width="0" />:<img width="0" /> <img width="0" />&lt;i<img width="0" />><img width="0" />i<img width="0" />&lt;/<img width="0" />i<img width="0" />><img width="0" /> <img width="0" />a<img width="0" />n<img width="0" />d<img width="0" /> <img width="0" />&amp;"<img width="0" />
-</span></div>
-<div class='console output'><img width="0" />A<img width="0" />n<img width="0" />d<img width="0" /> <img width="0" />a<img width="0" />l<img width="0" />s<img width="0" />o<img width="0" /> <img width="0" />c<img width="0" />o<img width="0" />m<img width="0" />m<img width="0" />a<img width="0" />n<img width="0" />d<img width="0" />s<img width="0" /> <img width="0" />a<img width="0" />n<img width="0" />d<img width="0" /> <img width="0" />t<img width="0" />h<img width="0" />e<img width="0" />i<img width="0" />r<img width="0" /> <img width="0" />o<img width="0" />u<img width="0" />t<img width="0" />p<img width="0" />u<img width="0" />t<img width="0" />:<img width="0" /> <img width="0" />&lt;i<img width="0" />><img width="0" />i<img width="0" />&lt;/<img width="0" />i<img width="0" />><img width="0" /> <img width="0" />a<img width="0" />n<img width="0" />d<img width="0" /> <img width="0" />&amp;
-</div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>echo "And also commands and their output: &lt;i>i&lt;/i> and &amp;"</kbd><br/>
+<kbd class='shell output'>And also commands and their output: &lt;i>i&lt;/i> and &amp;</kbd><br/>
+</samp></div>
 <h2>Handling non-zero exit status of commands</h2>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />d<img width="0" />i<img width="0" />e<img width="0" />(<img width="0" />)<img width="0" /> <img width="0" />{<img width="0" /> <img width="0" />h<img width="0" />t<img width="0" />m<img width="0" />l<img width="0" /> <img width="0" />"<img width="0" />d<img width="0" />i<img width="0" />e<img width="0" />d<img width="0" />:<img width="0" /> <img width="0" />$<img width="0" />@<img width="0" />"<img width="0" />;<img width="0" /> <img width="0" />}<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>die() { html "died: $@"; }</kbd><br/>
+</samp></div>
 <p class='text'>
 A non-zero exit status is an error, if using the cmd function.
 </p>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />f<img width="0" />a<img width="0" />l<img width="0" />s<img width="0" />e<img width="0" />
-</span></div>
-<div class='console output'>died: Pipeline 'false' exited with status 1. It should have been 0.<img width="0" /></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>false</kbd><br/>
+died: Pipeline 'false' exited with status 1. It should have been 0.</samp></div>
 <p class='text'>
 Function cmde must be used instead.
 </p>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />f<img width="0" />a<img width="0" />l<img width="0" />s<img width="0" />e<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>false</kbd><br/>
+</samp></div>
 <p class='text'>
 It's an error if the cmde exits with different exit status.
 </p>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />t<img width="0" />r<img width="0" />u<img width="0" />e<img width="0" />
-</span></div>
-<div class='console output'>died: Pipeline 'true' exited with status 0. It should have been 1.<img width="0" /></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>true</kbd><br/>
+died: Pipeline 'true' exited with status 0. It should have been 1.</samp></div>
 <p class='text'>
 Command statuses in a pipeline are asserted individually. First the happy case.
 </p>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />f<img width="0" />a<img width="0" />l<img width="0" />s<img width="0" />e<img width="0" /> <img width="0" />|<img width="0" /> <img width="0" />t<img width="0" />r<img width="0" />u<img width="0" />e<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /></div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />t<img width="0" />r<img width="0" />u<img width="0" />e<img width="0" /> <img width="0" />|<img width="0" /> <img width="0" />f<img width="0" />a<img width="0" />l<img width="0" />s<img width="0" />e<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>false | true</kbd><br/>
+</samp></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>true | false</kbd><br/>
+</samp></div>
 <p class='text'>
 Then failure.
 </p>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />t<img width="0" />r<img width="0" />u<img width="0" />e<img width="0" /> <img width="0" />|<img width="0" /> <img width="0" />f<img width="0" />a<img width="0" />l<img width="0" />s<img width="0" />e<img width="0" />
-</span></div>
-<div class='console output'>died: Pipeline 'true | false' exited with status 0 1. It should have been 1 0.<img width="0" /></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>true | false</kbd><br/>
+died: Pipeline 'true | false' exited with status 0 1. It should have been 1 0.</samp></div>
 <p class='text'>
 The bash special parameter 0 always expands to 0, to keep descript more robust. TODO maybe it would be better not to use set -eu.
 </p>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />d<img width="0" />i<img width="0" />e<img width="0" />(<img width="0" />)<img width="0" /> <img width="0" />{<img width="0" /> <img width="0" />e<img width="0" />c<img width="0" />h<img width="0" />o<img width="0" /> <img width="0" />"<img width="0" />$<img width="0" />@<img width="0" />"<img width="0" />;<img width="0" /> <img width="0" />e<img width="0" />x<img width="0" />i<img width="0" />t<img width="0" /> <img width="0" />1<img width="0" />;<img width="0" /> <img width="0" />}<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /></div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />t<img width="0" />r<img width="0" />u<img width="0" />e<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /></div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />e<img width="0" />c<img width="0" />h<img width="0" />o<img width="0" /> <img width="0" />$<img width="0" />?<img width="0" />
-</span></div>
-<div class='console output'><img width="0" />0<img width="0" />
-</div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>die() { echo "$@"; exit 1; }</kbd><br/>
+</samp></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>true</kbd><br/>
+</samp></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>echo $?</kbd><br/>
+<kbd class='shell output'>0</kbd><br/>
+</samp></div>
 <div><span class='output-asserted'><i>Output asserted</i></span></div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />f<img width="0" />a<img width="0" />l<img width="0" />s<img width="0" />e<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /></div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />e<img width="0" />c<img width="0" />h<img width="0" />o<img width="0" /> <img width="0" />$<img width="0" />?<img width="0" />
-</span></div>
-<div class='console output'><img width="0" />0<img width="0" />
-</div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>false</kbd><br/>
+</samp></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>echo $?</kbd><br/>
+<kbd class='shell output'>0</kbd><br/>
+</samp></div>
 <div><span class='output-asserted'><i>Output asserted</i></span></div>
 <h2>Redirects can be used</h2>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />e<img width="0" />c<img width="0" />h<img width="0" />o<img width="0" /> <img width="0" />"<img width="0" />i<img width="0" />t<img width="0" /> <img width="0" />w<img width="0" />o<img width="0" />r<img width="0" />k<img width="0" />s<img width="0" />"<img width="0" /> <img width="0" />><img width="0" /> <img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /></div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />c<img width="0" />a<img width="0" />t<img width="0" /> <img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />
-</span></div>
-<div class='console output'><img width="0" />i<img width="0" />t<img width="0" /> <img width="0" />w<img width="0" />o<img width="0" />r<img width="0" />k<img width="0" />s<img width="0" />
-</div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>echo "it works" > file</kbd><br/>
+</samp></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>cat file</kbd><br/>
+<kbd class='shell output'>it works</kbd><br/>
+</samp></div>
 <div><span class='output-asserted'><i>Output asserted</i></span></div>
 <h2>Forged path</h2>
 <p class='text'>
 Absolute paths in output get forged, partly for security and partly for reproducible builds.
 </p>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />p<img width="0" />w<img width="0" />d<img width="0" />
-</span></div>
-<div class='console output'><img width="0" />/<img width="0" />h<img width="0" />o<img width="0" />m<img width="0" />e<img width="0" />/<img width="0" />h<img width="0" />a<img width="0" />c<img width="0" />k<img width="0" />e<img width="0" />r<img width="0" />
-</div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>pwd</kbd><br/>
+<kbd class='shell output'>/home/hacker</kbd><br/>
+</samp></div>
 <div><span class='output-asserted'><i>Output asserted</i></span></div>
 <p class='text'>
 But out-was assertions need to use real paths! Forging must be visual only.
 </p>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />m<img width="0" />k<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" /> <img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />1<img width="0" /> <img width="0" />&amp;&amp; <img width="0" />c<img width="0" />d<img width="0" /> <img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />1<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /></div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" />/<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />1<img width="0" /> $ </span><span class='cmd'><img width="0" />p<img width="0" />w<img width="0" />d<img width="0" />
-</span></div>
-<div class='console output'><img width="0" />/<img width="0" />h<img width="0" />o<img width="0" />m<img width="0" />e<img width="0" />/<img width="0" />h<img width="0" />a<img width="0" />c<img width="0" />k<img width="0" />e<img width="0" />r<img width="0" />/<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />1<img width="0" />
-</div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>mkdir dir1 &amp;&amp; cd dir1</kbd><br/>
+</samp></div>
+<div class='console'><samp><kbd class='shell prompt'>~/dir1 $ </kbd><kbd class='shell cmd'>pwd</kbd><br/>
+<kbd class='shell output'>/home/hacker/dir1</kbd><br/>
+</samp></div>
 <div><span class='output-asserted'><i>Output asserted</i></span></div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" />/<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />1<img width="0" /> $ </span><span class='cmd'><img width="0" />e<img width="0" />c<img width="0" />h<img width="0" />o<img width="0" /> <img width="0" />$<img width="0" />P<img width="0" />W<img width="0" />D<img width="0" />/<img width="0" />a<img width="0" />n<img width="0" />o<img width="0" />t<img width="0" />h<img width="0" />e<img width="0" />r<img width="0" />-<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />
-</span></div>
-<div class='console output'><img width="0" />/<img width="0" />h<img width="0" />o<img width="0" />m<img width="0" />e<img width="0" />/<img width="0" />h<img width="0" />a<img width="0" />c<img width="0" />k<img width="0" />e<img width="0" />r<img width="0" />/<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />1<img width="0" />/<img width="0" />a<img width="0" />n<img width="0" />o<img width="0" />t<img width="0" />h<img width="0" />e<img width="0" />r<img width="0" />-<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />
-</div>
+<div class='console'><samp><kbd class='shell prompt'>~/dir1 $ </kbd><kbd class='shell cmd'>echo $PWD/another-dir</kbd><br/>
+<kbd class='shell output'>/home/hacker/dir1/another-dir</kbd><br/>
+</samp></div>
 <div><span class='output-asserted'><i>Output asserted</i></span></div>
 <p class='text'>
 Absolute paths on command lines are also forged.
 </p>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" />/<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />1<img width="0" /> $ </span><span class='cmd'><img width="0" />e<img width="0" />c<img width="0" />h<img width="0" />o<img width="0" /> <img width="0" />P<img width="0" />W<img width="0" />D<img width="0" /> <img width="0" />e<img width="0" />x<img width="0" />p<img width="0" />a<img width="0" />n<img width="0" />d<img width="0" />e<img width="0" />d<img width="0" /> <img width="0" />i<img width="0" />n<img width="0" /> <img width="0" />t<img width="0" />h<img width="0" />e<img width="0" /> <img width="0" />d<img width="0" />e<img width="0" />s<img width="0" />c<img width="0" />r<img width="0" />i<img width="0" />p<img width="0" />t<img width="0" /> <img width="0" />s<img width="0" />c<img width="0" />r<img width="0" />i<img width="0" />p<img width="0" />t<img width="0" />:<img width="0" /> <img width="0" />/<img width="0" />h<img width="0" />o<img width="0" />m<img width="0" />e<img width="0" />/<img width="0" />h<img width="0" />a<img width="0" />c<img width="0" />k<img width="0" />e<img width="0" />r<img width="0" />/<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />1<img width="0" />
-</span></div>
-<div class='console output'><img width="0" />P<img width="0" />W<img width="0" />D<img width="0" /> <img width="0" />e<img width="0" />x<img width="0" />p<img width="0" />a<img width="0" />n<img width="0" />d<img width="0" />e<img width="0" />d<img width="0" /> <img width="0" />i<img width="0" />n<img width="0" /> <img width="0" />t<img width="0" />h<img width="0" />e<img width="0" /> <img width="0" />d<img width="0" />e<img width="0" />s<img width="0" />c<img width="0" />r<img width="0" />i<img width="0" />p<img width="0" />t<img width="0" /> <img width="0" />s<img width="0" />c<img width="0" />r<img width="0" />i<img width="0" />p<img width="0" />t<img width="0" />:<img width="0" /> <img width="0" />/<img width="0" />h<img width="0" />o<img width="0" />m<img width="0" />e<img width="0" />/<img width="0" />h<img width="0" />a<img width="0" />c<img width="0" />k<img width="0" />e<img width="0" />r<img width="0" />/<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />1<img width="0" />
-</div>
+<div class='console'><samp><kbd class='shell prompt'>~/dir1 $ </kbd><kbd class='shell cmd'>echo PWD expanded in the descript script: /home/hacker/dir1</kbd><br/>
+<kbd class='shell output'>PWD expanded in the descript script: /home/hacker/dir1</kbd><br/>
+</samp></div>
 <div><span class='output-asserted'><i>Output asserted</i></span></div>
 <p class='text'>
 Home directory is forged, if absolute path points outside working area.
 </p>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" />/<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />1<img width="0" /> $ </span><span class='cmd'><img width="0" />r<img width="0" />e<img width="0" />a<img width="0" />d<img width="0" />l<img width="0" />i<img width="0" />n<img width="0" />k<img width="0" /> <img width="0" />-<img width="0" />f<img width="0" /> <img width="0" />/<img width="0" />h<img width="0" />o<img width="0" />m<img width="0" />e<img width="0" />/<img width="0" />h<img width="0" />a<img width="0" />c<img width="0" />k<img width="0" />e<img width="0" />r<img width="0" />
-</span></div>
-<div class='console output'><img width="0" />/<img width="0" />h<img width="0" />o<img width="0" />m<img width="0" />e<img width="0" />/<img width="0" />h<img width="0" />a<img width="0" />c<img width="0" />k<img width="0" />e<img width="0" />r<img width="0" />
-</div>
+<div class='console'><samp><kbd class='shell prompt'>~/dir1 $ </kbd><kbd class='shell cmd'>readlink -f /home/hacker</kbd><br/>
+<kbd class='shell output'>/home/hacker</kbd><br/>
+</samp></div>
 <div><span class='output-asserted'><i>Output asserted</i></span></div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" />/<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />1<img width="0" /> $ </span><span class='cmd'><img width="0" />e<img width="0" />c<img width="0" />h<img width="0" />o<img width="0" /> <img width="0" />/<img width="0" />h<img width="0" />o<img width="0" />m<img width="0" />e<img width="0" />/<img width="0" />h<img width="0" />a<img width="0" />c<img width="0" />k<img width="0" />e<img width="0" />r<img width="0" />/<img width="0" />s<img width="0" />o<img width="0" />m<img width="0" />e<img width="0" />/<img width="0" />p<img width="0" />a<img width="0" />t<img width="0" />h<img width="0" /> <img width="0" />'<img width="0" />/<img width="0" />h<img width="0" />o<img width="0" />m<img width="0" />e<img width="0" />/<img width="0" />h<img width="0" />a<img width="0" />c<img width="0" />k<img width="0" />e<img width="0" />r<img width="0" />/<img width="0" />o<img width="0" />t<img width="0" />h<img width="0" />e<img width="0" />r<img width="0" />/<img width="0" />p<img width="0" />a<img width="0" />t<img width="0" />h<img width="0" />'<img width="0" />
-</span></div>
-<div class='console output'><img width="0" />/<img width="0" />h<img width="0" />o<img width="0" />m<img width="0" />e<img width="0" />/<img width="0" />h<img width="0" />a<img width="0" />c<img width="0" />k<img width="0" />e<img width="0" />r<img width="0" />/<img width="0" />s<img width="0" />o<img width="0" />m<img width="0" />e<img width="0" />/<img width="0" />p<img width="0" />a<img width="0" />t<img width="0" />h<img width="0" /> <img width="0" />/<img width="0" />h<img width="0" />o<img width="0" />m<img width="0" />e<img width="0" />/<img width="0" />h<img width="0" />a<img width="0" />c<img width="0" />k<img width="0" />e<img width="0" />r<img width="0" />/<img width="0" />o<img width="0" />t<img width="0" />h<img width="0" />e<img width="0" />r<img width="0" />/<img width="0" />p<img width="0" />a<img width="0" />t<img width="0" />h<img width="0" />
-</div>
+<div class='console'><samp><kbd class='shell prompt'>~/dir1 $ </kbd><kbd class='shell cmd'>echo /home/hacker/some/path '/home/hacker/other/path'</kbd><br/>
+<kbd class='shell output'>/home/hacker/some/path /home/hacker/other/path</kbd><br/>
+</samp></div>
 <div><span class='output-asserted'><i>Output asserted</i></span></div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" />/<img width="0" />d<img width="0" />i<img width="0" />r<img width="0" />1<img width="0" /> $ </span><span class='cmd'><img width="0" />c<img width="0" />d<img width="0" /> <img width="0" />.<img width="0" />.<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /></div>
+<div class='console'><samp><kbd class='shell prompt'>~/dir1 $ </kbd><kbd class='shell cmd'>cd ..</kbd><br/>
+</samp></div>
 <h2>Mocked html browser</h2>
 <p class='text'>
 First missing html file.
 </p>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />d<img width="0" />i<img width="0" />e<img width="0" />(<img width="0" />)<img width="0" /> <img width="0" />{<img width="0" /> <img width="0" />h<img width="0" />t<img width="0" />m<img width="0" />l<img width="0" /> <img width="0" />"<img width="0" />d<img width="0" />i<img width="0" />e<img width="0" />d<img width="0" />:<img width="0" /> <img width="0" />$<img width="0" />@<img width="0" />"<img width="0" />;<img width="0" /> <img width="0" />}<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /></div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />$<img width="0" />B<img width="0" />R<img width="0" />O<img width="0" />W<img width="0" />S<img width="0" />E<img width="0" />R<img width="0" /> <img width="0" />"<img width="0" />m<img width="0" />i<img width="0" />s<img width="0" />s<img width="0" />i<img width="0" />n<img width="0" />g<img width="0" />.<img width="0" />h<img width="0" />t<img width="0" />m<img width="0" />l<img width="0" />"<img width="0" />
-</span></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>die() { html "died: $@"; }</kbd><br/>
+</samp></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>$BROWSER "missing.html"</kbd><br/>
+</samp></div>
 died: Cannot browse, file does not exist: missing.html<p class='text'>
 Then missing name for the iframe file of a minimal html document.
 </p>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />$<img width="0" />E<img width="0" />D<img width="0" />I<img width="0" />T<img width="0" />O<img width="0" />R<img width="0" /> <img width="0" />"<img width="0" />a<img width="0" />.<img width="0" />h<img width="0" />t<img width="0" />m<img width="0" />l<img width="0" />"<img width="0" />
-</span></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>$EDITOR "a.html"</kbd><br/>
+</samp></div>
 <div class='editor'>
 <div class='add line'>&lt;html>&lt;body></div>
 <div class='add line'>&lt;p>Hello&lt;/p></div>
@@ -369,35 +319,32 @@ Then missing name for the iframe file of a minimal html document.
 died: Usage: browser FILE IFRAMENAME<p class='text'>
 Minimal happy case.
 </p>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />d<img width="0" />i<img width="0" />e<img width="0" />(<img width="0" />)<img width="0" /> <img width="0" />{<img width="0" /> <img width="0" />e<img width="0" />c<img width="0" />h<img width="0" />o<img width="0" /> <img width="0" />"<img width="0" />$<img width="0" />@<img width="0" />"<img width="0" />;<img width="0" /> <img width="0" />e<img width="0" />x<img width="0" />i<img width="0" />t<img width="0" /> <img width="0" />1<img width="0" />;<img width="0" /> <img width="0" />}<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /></div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />$<img width="0" />B<img width="0" />R<img width="0" />O<img width="0" />W<img width="0" />S<img width="0" />E<img width="0" />R<img width="0" /> <img width="0" />"<img width="0" />a<img width="0" />.<img width="0" />h<img width="0" />t<img width="0" />m<img width="0" />l<img width="0" />"<img width="0" />
-</span></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>die() { echo "$@"; exit 1; }</kbd><br/>
+</samp></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>$BROWSER "a.html"</kbd><br/>
+</samp></div>
 <iframe src="011-browser.html.iframe.hello.html">Your browser does not support iframes.</iframe><p class='text'>
 Reusing iframe name fails.
 </p>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />d<img width="0" />i<img width="0" />e<img width="0" />(<img width="0" />)<img width="0" /> <img width="0" />{<img width="0" /> <img width="0" />h<img width="0" />t<img width="0" />m<img width="0" />l<img width="0" /> <img width="0" />"<img width="0" />d<img width="0" />i<img width="0" />e<img width="0" />d<img width="0" />:<img width="0" /> <img width="0" />$<img width="0" />@<img width="0" />"<img width="0" />;<img width="0" /> <img width="0" />}<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /></div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />$<img width="0" />E<img width="0" />D<img width="0" />I<img width="0" />T<img width="0" />O<img width="0" />R<img width="0" /> <img width="0" />"<img width="0" />a<img width="0" />.<img width="0" />h<img width="0" />t<img width="0" />m<img width="0" />l<img width="0" />"<img width="0" />
-</span></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>die() { html "died: $@"; }</kbd><br/>
+</samp></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>$EDITOR "a.html"</kbd><br/>
+</samp></div>
 <div class='editor'>
 <div class='keep line'>&lt;html>&lt;body></div>
 <div class='del line'>&lt;p>Hello&lt;/p></div>
 <div class='add line'>&lt;p>Hello 2&lt;/p></div>
 <div class='keep line'>&lt;/body>&lt;/html></div>
 </div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />$<img width="0" />B<img width="0" />R<img width="0" />O<img width="0" />W<img width="0" />S<img width="0" />E<img width="0" />R<img width="0" /> <img width="0" />"<img width="0" />a<img width="0" />.<img width="0" />h<img width="0" />t<img width="0" />m<img width="0" />l<img width="0" />"<img width="0" />
-</span></div>
-died: Cannot browse, iframe name already used: hello<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />d<img width="0" />i<img width="0" />e<img width="0" />(<img width="0" />)<img width="0" /> <img width="0" />{<img width="0" /> <img width="0" />e<img width="0" />c<img width="0" />h<img width="0" />o<img width="0" /> <img width="0" />"<img width="0" />$<img width="0" />@<img width="0" />"<img width="0" />;<img width="0" /> <img width="0" />e<img width="0" />x<img width="0" />i<img width="0" />t<img width="0" /> <img width="0" />1<img width="0" />;<img width="0" /> <img width="0" />}<img width="0" />
-</span></div>
-<div class='console output'><img width="0" /></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>$BROWSER "a.html"</kbd><br/>
+</samp></div>
+died: Cannot browse, iframe name already used: hello<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>die() { echo "$@"; exit 1; }</kbd><br/>
+</samp></div>
 <p class='text'>
 New browse succeeds with different iframe name.
 </p>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />$<img width="0" />B<img width="0" />R<img width="0" />O<img width="0" />W<img width="0" />S<img width="0" />E<img width="0" />R<img width="0" /> <img width="0" />"<img width="0" />a<img width="0" />.<img width="0" />h<img width="0" />t<img width="0" />m<img width="0" />l<img width="0" />"<img width="0" />
-</span></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>$BROWSER "a.html"</kbd><br/>
+</samp></div>
 <iframe src="011-browser.html.iframe.hello2.html">Your browser does not support iframes.</iframe><h2>Empty section &lt; &amp;</h2>
 </body>
 </html>

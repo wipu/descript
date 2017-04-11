@@ -1,49 +1,46 @@
 <h2>Editing file, inlined content</h2>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />$<img width="0" />E<img width="0" />D<img width="0" />I<img width="0" />T<img width="0" />O<img width="0" />R<img width="0" /> <img width="0" />"<img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" />"<img width="0" />
-</span></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>$EDITOR "file1"</kbd><br/>
+</samp></div>
 <div class='editor'>
 <div class='add line'>file1 line1</div>
 <div class='add line'>file1 line2</div>
 </div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />c<img width="0" />a<img width="0" />t<img width="0" /> <img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" />
-</span></div>
-<div class='console output'><img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" /> <img width="0" />l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" />1<img width="0" /><br/>
-f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" /> <img width="0" />l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" />2<img width="0" />
-</div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>cat file1</kbd><br/>
+<kbd class='shell output'>file1 line1</kbd><br/>
+<kbd class='shell output'>file1 line2</kbd><br/>
+</samp></div>
 <div><span class='output-asserted'><i>Output asserted</i></span></div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />$<img width="0" />E<img width="0" />D<img width="0" />I<img width="0" />T<img width="0" />O<img width="0" />R<img width="0" /> <img width="0" />"<img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" />"<img width="0" />
-</span></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>$EDITOR "file1"</kbd><br/>
+</samp></div>
 <div class='editor'>
 <div class='del line'>file1 line1</div>
 <div class='add line'>file1 line1, modified</div>
 <div class='keep line'>file1 line2</div>
 <div class='add line'>file1 line3, added</div>
 </div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />c<img width="0" />a<img width="0" />t<img width="0" /> <img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" />
-</span></div>
-<div class='console output'><img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" /> <img width="0" />l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" />1<img width="0" />,<img width="0" /> <img width="0" />m<img width="0" />o<img width="0" />d<img width="0" />i<img width="0" />f<img width="0" />i<img width="0" />e<img width="0" />d<img width="0" /><br/>
-f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" /> <img width="0" />l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" />2<img width="0" /><br/>
-f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" /> <img width="0" />l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" />3<img width="0" />,<img width="0" /> <img width="0" />a<img width="0" />d<img width="0" />d<img width="0" />e<img width="0" />d<img width="0" />
-</div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>cat file1</kbd><br/>
+<kbd class='shell output'>file1 line1, modified</kbd><br/>
+<kbd class='shell output'>file1 line2</kbd><br/>
+<kbd class='shell output'>file1 line3, added</kbd><br/>
+</samp></div>
 <div><span class='output-asserted'><i>Output asserted</i></span></div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />$<img width="0" />E<img width="0" />D<img width="0" />I<img width="0" />T<img width="0" />O<img width="0" />R<img width="0" /> <img width="0" />"<img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" />"<img width="0" />
-</span></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>$EDITOR "file1"</kbd><br/>
+</samp></div>
 <div class='editor'>
 <div class='keep line'>file1 line1, modified</div>
 <div class='del line'>file1 line2</div>
 <div class='keep line'>file1 line3, added</div>
 </div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />c<img width="0" />a<img width="0" />t<img width="0" /> <img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" />
-</span></div>
-<div class='console output'><img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" /> <img width="0" />l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" />1<img width="0" />,<img width="0" /> <img width="0" />m<img width="0" />o<img width="0" />d<img width="0" />i<img width="0" />f<img width="0" />i<img width="0" />e<img width="0" />d<img width="0" /><br/>
-f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" /> <img width="0" />l<img width="0" />i<img width="0" />n<img width="0" />e<img width="0" />3<img width="0" />,<img width="0" /> <img width="0" />a<img width="0" />d<img width="0" />d<img width="0" />e<img width="0" />d<img width="0" />
-</div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>cat file1</kbd><br/>
+<kbd class='shell output'>file1 line1, modified</kbd><br/>
+<kbd class='shell output'>file1 line3, added</kbd><br/>
+</samp></div>
 <div><span class='output-asserted'><i>Output asserted</i></span></div>
 <p class='text'>
 Empty lines also work in editor:
 </p>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />$<img width="0" />E<img width="0" />D<img width="0" />I<img width="0" />T<img width="0" />O<img width="0" />R<img width="0" /> <img width="0" />"<img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" />"<img width="0" />
-</span></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>$EDITOR "file1"</kbd><br/>
+</samp></div>
 <div class='editor'>
 <div class='keep line'>file1 line1, modified</div>
 <div class='keep line'>file1 line3, added</div>
@@ -51,8 +48,8 @@ Empty lines also work in editor:
 <div class='add line'></div>
 <div class='add line'>empty line above</div>
 </div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />$<img width="0" />E<img width="0" />D<img width="0" />I<img width="0" />T<img width="0" />O<img width="0" />R<img width="0" /> <img width="0" />"<img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" />"<img width="0" />
-</span></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>$EDITOR "file1"</kbd><br/>
+</samp></div>
 <div class='editor'>
 <div class='keep line'>file1 line1, modified</div>
 <div class='keep line'>file1 line3, added</div>
@@ -63,8 +60,8 @@ Empty lines also work in editor:
 <div class='add line'></div>
 <div class='add line'></div>
 </div>
-<div class='console'><span class='prompt'><img width="0" />~<img width="0" /> $ </span><span class='cmd'><img width="0" />$<img width="0" />E<img width="0" />D<img width="0" />I<img width="0" />T<img width="0" />O<img width="0" />R<img width="0" /> <img width="0" />"<img width="0" />f<img width="0" />i<img width="0" />l<img width="0" />e<img width="0" />1<img width="0" />"<img width="0" />
-</span></div>
+<div class='console'><samp><kbd class='shell prompt'>~ $ </kbd><kbd class='shell cmd'>$EDITOR "file1"</kbd><br/>
+</samp></div>
 <div class='editor'>
 <div class='keep line'>file1 line1, modified</div>
 <div class='keep line'>file1 line3, added</div>

@@ -84,7 +84,8 @@ to-article <<EOF
 <style type='text/css'>
 body {font: 12px verdana, arial, sans-serif;}
 .text {width:65em;}
-.console {background-color:black;font-family:monospace;margin-left:33px;width:60em;}
+.console {background-color:black;color:red;font-family:monospace;margin-left:33px;width:60em;}
+.shell {word-break:break-all;white-space:pre-wrap;display:inline;}
 .prompt {font-weight:bold;color:green;}
 .cmd {color:white;}
 .output {color:gray;}
@@ -128,8 +129,8 @@ cmde() {
   [ $# -lt 2 ] && die "Usage: PIPESTATUS CMDWORD..."
   local EXPECTED_STATUS=$1
   shift
+  console-start
   cmd-line "$@"
-  html "<div class='console output'>"
   local CMDTMP=$DESCRIPT_TMP/tmp.sh
   LASTOUT=$DESCRIPT_TMP/out
   echo "$@" > "$CMDTMP"
@@ -142,9 +143,18 @@ cmde() {
   set -e
   [ "$ACTUAL_STATUS" == "$EXPECTED_STATUS" ] ||
     die "Pipeline '$@' exited with status $ACTUAL_STATUS. It should have been $EXPECTED_STATUS."
-  cat "$LASTOUT" | forged-path | xml-quoted | spaced | to-article
-  html-line "</div>"
+  cat "$LASTOUT" | to-shell-lines "output"
+  console-end
 }
+
+console-start() {
+  html "<div class='console'><samp>"
+}
+
+console-end() {
+  html-line "</samp></div>"
+}
+
 
 cmd() {
   cmde 0 "$@"
@@ -167,47 +177,25 @@ to-relative() {
 prompt() {
   local PROMPT=$(pwd | to-relative '~')
   debuglog "prompt: $PROMPT"
-  PROMPT=$(echo -n "$PROMPT" | spaced)
-  html "<span class='prompt'>$PROMPT \$ </span>"
+  echo "$PROMPT \$ " | to-shell-lines "prompt" false
 }
 
-#  sed 's:\([^ ]\):<code>\1</code>:g' |
-
-
-# nice span-like flow without extra linebreaks or other characters needed
-# and no stripping of whitespace.
-# whitespace=pre doesn't work because manual linebreaks needed
-# emsp looks perfect but copy-pasted commands don't work (emsp is not space)
-# well, browsers preserve consecutive spaces if there is a non-text element
-# between them, so let's make it a 0-width image.
-#
-# the img hack is used for all characters for console-like breaking of
-# lines (not word boundary but on any character)
-#
-# linebreaks get replaced with <br/> except on the last line
-#
-# hacked html entities (&amp; and &lt;) are dehacked.
-# TODO find a less ugly way to handle them.
-#
-# the img element is around all chars, not just between, to handle multiple
-# spaces in the beginning or end correctly
-spaced() {
-  echo -n '<img width="0" />'
-  sed 's:\(.\):\1<img width="0" />:g' |
-  sed 's:\&<img width="0" />a<img width="0" />m<img width="0" />p<img width="0" />;<img width="0" />:\&amp;:g' |
-  sed 's:\&<img width="0" />l<img width="0" />t<img width="0" />;<img width="0" />:\&lt;:g' |
-  sed '$!s:$:<br/>:g'
+to-shell-lines() {
+    local CLASS=$1
+    local BR=${2:-true}
+    while IFS='' read LINE; do
+	html "<kbd class='shell $CLASS'>"
+	echo -n "$LINE" | forged-path | xml-quoted | to-article
+	html "</kbd>"
+	[ "$BR" == "true" ] && html-line "<br/>" || true
+    done
 }
 
 cmd-line() {
-  html "<div class='console'>"
   prompt
   local CMDLINE=$DESCRIPT_TMP/cmdline
-  echo "$@" | forged-path > "$CMDLINE"
-  html "<span class='cmd'>"
-  cat "$CMDLINE" | xml-quoted | spaced | to-article
-  html "</span>"
-  html-line "</div>"
+  echo "$@" > "$CMDLINE"
+  cat "$CMDLINE" | to-shell-lines "cmd"
 }
 
 forged-path() {
@@ -254,7 +242,9 @@ edit() {
   cp "$FILE" "$NEW"
   local COLORDIFF=$EDITDIR/$EDITNAME.colordiff
   colordiff "$EDITDIR/current" "$FILE" "$COLORDIFF"
+  console-start
   cmd-line "\$EDITOR \"$FILE\""
+  console-end
   html-line "<div class='editor'>"
   cat "$COLORDIFF" | to-article
   html-line "</div>"
@@ -282,7 +272,9 @@ browser() {
   log "browser $FILE"
   debuglog "IFRAMEFILE=$IFRAMEFILE"
   local IFRAMEFILEBASE=$(basename "$IFRAMEFILE")
+  console-start
   cmd-line "\$BROWSER \"$FILE\""
+  console-end
   [ -e "$FILE" ] || {
     die "Cannot browse, file does not exist: $FILE"
     return
