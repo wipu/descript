@@ -39,6 +39,11 @@
   + ask for help: http://stackoverflow.com/questions/43317395/copypasteable-console-output-with-html-css-javascript/43318987
   + polish a solution based on the answer by Shao Chuan (thanks Chuan!)
 
++ @bugfix allow backslash on commandline and output
+  * http://stackoverflow.com/questions/10929453/read-a-file-line-by-line-assigning-the-value-to-a-variable
+  + test
+  + fix by adding option -r to read
+
 - As user I want to see html output in a mocked browser div so I can learn programs that output html (like descript)
   + failure if html file missing
   + simple html file

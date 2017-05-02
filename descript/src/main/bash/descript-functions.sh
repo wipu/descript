@@ -183,7 +183,7 @@ prompt() {
 to-shell-lines() {
     local CLASS=$1
     local BR=${2:-true}
-    while IFS='' read LINE; do
+    while IFS='' read -r LINE; do
 	html "<kbd class='shell $CLASS'>"
 	echo -n "$LINE" | forged-path | xml-quoted | to-article
 	html "</kbd>"
